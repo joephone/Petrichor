@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_public"
+    android:orientation="vertical">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <View style="@style/Line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <com.transcendence.ui.widget.custom.TabView
+            android:id="@+id/tabOne"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/water_effect_github_black_selector"
+            app:tabTextSize="11"
+            />
+<!--        <com.transcendence.core.widget.custom.TabView-->
+<!--            android:id="@+id/tabTwo"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@drawable/water_effect_github_black_selector"-->
+<!--            android:layout_weight="1"-->
+<!--            />-->
+<!--        <com.transcendence.core.widget.custom.TabView-->
+<!--            android:id="@+id/tabThree"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@drawable/water_effect_github_black_selector"-->
+<!--            android:layout_weight="1"-->
+<!--            />-->
+<!--        <com.transcendence.core.widget.custom.TabView-->
+<!--            android:id="@+id/tabFour"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@drawable/water_effect_github_black_selector"-->
+<!--            android:layout_weight="1"-->
+<!--            />-->
+<!--        <TabView-->
+<!--            android:id="@+id/tabFive"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@drawable/water_effect_github_black_selector"-->
+<!--            android:layout_weight="1"-->
+<!--            />-->
+    </LinearLayout>
+
+</LinearLayout>

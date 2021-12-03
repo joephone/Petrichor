@@ -8,4 +8,40 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- 全屏主题样式 -->
+    <style name="FullScreenTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- 闪屏页主题样式 -->
+    <style name="SplashTheme" parent="FullScreenTheme">
+        <!-- https://www.jianshu.com/p/d0d907754603 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="splash" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@mipmap/tudor_rose_one</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+    <style name="NoTitleAppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here.  @mipmap/splash  @drawable/bg_color_primary_dar-->
+        <!-- 窗口背景颜色 -->
+        <item name="android:windowBackground">@color/theme_tudor_white</item>
+        <!-- 窗口无默认标题栏 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--        <item name="windowActionBar">false</item>-->
+        <!-- 应用的主要色调，actionBar默认使用该颜色，Toolbar导航栏的底色 -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- 应用的主要暗色调，statusBarColor默认使用该颜色 -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- 应用的强调色，CheckBox，RadioButton，SwitchCompat等一般控件的选中效果默认采用该颜色   Accent 强调-->
+        <item name="colorAccent">@color/colorPrimary</item>
+        <!-- 避免控件会顶到状态栏上 -->
+        <item name="android:fitsSystemWindows">true</item>
+        <!--        <item name="android:windowTitleSize">68dp</item>-->
+    </style>
+
 </resources>

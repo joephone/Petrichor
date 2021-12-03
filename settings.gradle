@@ -1,2 +1,6 @@
 rootProject.name='Petrichor'
 include ':app'
+include ':basic_core'
+include ':basic_res'
+include ':ui'
+include ':basic_ui'

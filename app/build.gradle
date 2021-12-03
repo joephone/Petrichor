@@ -1,23 +1,17 @@
 apply plugin: 'com.android.application'
+apply from: "../basic.gradle"
+
+def config = rootProject.ext
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "30.0.3"
-
     defaultConfig {
         applicationId "com.transcendence.petrichor"
-        minSdkVersion 21
-        targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -26,9 +20,19 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation project(':basic_core')
+    implementation project(':basic_res')
+    implementation project(':basic_ui')
+
+    api config.dependencies.appcompatv7
+    api config.dependencies.design
+    api config.dependencies.supportv4
+    api config.dependencies.constraintLayout
+
+    // 吐司框架：https://github.com/getActivity/ToastUtils
+    implementation 'com.hjq:toast:8.8'
+    // 日志打印框架：https://github.com/JakeWharton/timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+    // 日志
+    implementation 'com.github.joephone:jLog:v1.0.2'
 }

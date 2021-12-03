@@ -1,0 +1,47 @@
+def config = rootProject.ext
+
+android {
+    compileSdkVersion config.android["compileSdkVersion"]
+    buildToolsVersion config.android["buildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion config.android["minSdkVersion"]
+        targetSdkVersion config.android["targetSdkVersion"]
+        versionCode config.android["versionCode"]
+        versionName config.android["versionName"]
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+                includeCompileClasspath = true
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            postprocessing {
+                removeUnusedCode false
+                removeUnusedResources false
+                obfuscate false
+                optimizeCode false
+                proguardFile 'proguard-rules.pro'
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8  //config.compileOptions.targetCompatibility
+    }
+
+    sourceSets {
+        main {
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+
+}
