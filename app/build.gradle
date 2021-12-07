@@ -6,6 +6,11 @@ def config = rootProject.ext
 android {
     defaultConfig {
         applicationId "com.transcendence.petrichor"
+
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
     }
 
     buildTypes {
@@ -29,10 +34,19 @@ dependencies {
     api config.dependencies.supportv4
     api config.dependencies.constraintLayout
 
+
+    // 标题栏框架：https://github.com/getActivity/TitleBar
+    implementation 'com.hjq:titlebar:8.2'
+    // 沉浸式框架：https://github.com/gyf-dev/ImmersionBar
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
     // 吐司框架：https://github.com/getActivity/ToastUtils
     implementation 'com.hjq:toast:8.8'
     // 日志打印框架：https://github.com/JakeWharton/timber
     implementation 'com.jakewharton.timber:timber:4.7.1'
     // 日志
     implementation 'com.github.joephone:jLog:v1.0.2'
+
+    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
+
 }

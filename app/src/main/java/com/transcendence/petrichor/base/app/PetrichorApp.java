@@ -37,7 +37,6 @@ public final class PetrichorApp extends Application {
      * 初始化一些第三方框架
      */
     public static void init(final Application application) {
-
         // 初始化吐司
         ToastUtils.init(application, new ToastBlackStyle(application) {
 
@@ -49,7 +48,6 @@ public final class PetrichorApp extends Application {
 
         // 设置 Toast 拦截器
         ToastUtils.setToastInterceptor(new ToastInterceptor());
-
 
         // 注册网络状态变化监听
         ConnectivityManager connectivityManager = ContextCompat.getSystemService(application, ConnectivityManager.class);

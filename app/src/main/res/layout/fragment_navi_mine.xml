@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.transcendence.ui.scroll.HeaderZoomLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:cardBackgroundColor="?attr/dayNightBackground"
+    app:dayNightBackgroundAttr="dayNightBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--头部背景-->
+        <FrameLayout
+            android:id="@+id/fl_mine"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:background="@color/theme_tudor_red">
+
+            <com.transcendence.ui.widget.custom.WaveView
+                android:id="@+id/wave_view"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_gravity="bottom" />
+
+        </FrameLayout>
+
+
+        <!--关键代码 layout_alignBottom -->
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/fl_mine"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_fragment_mine_userinfo" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_layouts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_top"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_fragment_mine_layouts" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</com.transcendence.ui.scroll.HeaderZoomLayout>

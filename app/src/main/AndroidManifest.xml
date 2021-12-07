@@ -58,6 +58,11 @@
             android:screenOrientation="portrait"
             android:launchMode="singleTask"/>
 
+        <activity
+            android:name=".ui.mine.activity.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+
         <!-- 适配 Android 7.0 文件意图 -->
         <provider
             android:name="androidx.core.content.FileProvider"

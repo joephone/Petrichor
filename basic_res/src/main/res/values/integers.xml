@@ -7,4 +7,6 @@
     <integer name="sms_code_length">4</integer>
 
     <integer name="window_anim_duration">400</integer>
+
+    <integer name="swipeback_activity_duration">300</integer>
 </resources>

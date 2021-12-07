@@ -1,8 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
+    <!--昼夜模式主色调-->
+    <attr name="dayNightBackground" format="color|reference" />
+    <attr name="dayNightOneTextColor" format="color|reference" />
+    <attr name="dayNightTwoTextColor" format="color|reference" />
+    <attr name="dayNightThreeTextColor" format="color|reference" />
+    <attr name="dayNightBackgroundDrawable" format="color|reference" />
+
+    <declare-styleable name="DayNightMode">
+        <attr name="dayNightBackgroundAttr" format="string|reference" /><!--切换背景属性-->
+        <attr name="dayNightOneTextColorAttr" format="string|reference" /><!--切换一级字体颜色属性-->
+        <attr name="dayNightTwoTextColorAttr" format="string|reference" /><!--切换二级字体颜色属性-->
+        <attr name="dayNightThreeTextColorAttr" format="string|reference" /><!--切换三级字体颜色属性-->
+        <attr name="dayNightBackgroundDrawableAttr" format="string|reference" /><!--切换背景图片属性-->
+    </declare-styleable>
+
+
+    <!-- 正则表达式编辑框 -->
+    <declare-styleable name="RegexEditText">
+        <!-- 正则输入限制 -->
+        <attr name="inputRegex" format="string" />
+        <!-- 常用正则类型 -->
+        <attr name="regexType" >
+            <!-- 手机号（只能以 1 开头） -->
+            <enum name="mobile" value="0x01" />
+            <!-- 中文（普通的中文字符） -->
+            <enum name="chinese" value="0x02" />
+            <!-- 英文（大写和小写的英文） -->
+            <enum name="english" value="0x03" />
+            <!-- 整数（非 0 开头的数字） -->
+            <enum name="count" value="0x04" />
+            <!-- 用户名（中文、英文、数字） -->
+            <enum name="name" value="0x05" />
+            <!-- 非空格字符 -->
+            <enum name="nonnull" value="0x06" />
+        </attr>
+    </declare-styleable>
+
+
+    <!-- 带提交动画按钮 -->
+    <declare-styleable name="SubmitButton">
+        <!-- 进度按钮颜色 -->
+        <attr name="progressColor" format="color" />
+        <!-- 成功按钮颜色 -->
+        <attr name="succeedColor" format="color" />
+        <!-- 出错按钮颜色 -->
+        <attr name="errorColor" format="color" />
+        <!-- 进度条样式 -->
+        <attr name="progressStyle" format="enum">
+            <!-- 无进度 -->
+            <enum name="loading" value="0x00" />
+            <!-- 带进度 -->
+            <enum name="progress" value="0x01" />
+        </attr>
+    </declare-styleable>
+
+
+
     <declare-styleable name="TabView">
         <attr name="tabTextSize" format="reference|integer"/>
     </declare-styleable>
+
+
+    <!-- 缩放的 ImageView -->
+    <declare-styleable name="ScaleImageView">
+        <!-- 缩放比例 -->
+        <attr name="scaleRatio" format="float" />
+    </declare-styleable>
+
 
 </resources>

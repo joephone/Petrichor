@@ -1,26 +1,68 @@
 <resources>
-    <string name="app_name_douya">豆芽</string>
-    <string name="app_wan_name">玩</string>
+    <string name="app_name">Petrichor</string>
 
-    <!-- general -->
-    <string name="cancel">取消</string>
-    <string name="OK">确定</string>
-    <string name="send">发送</string>
-    <string name="down_load">下载</string>
-    <string name="load">加载</string>
-
-
-    <!-- wan tab -->
-    <string name="wan_tab_one">首页</string>
-    <string name="wan_tab_two">体系</string>
-    <string name="wan_tab_three">公众号</string>
-    <string name="wan_tab_four">项目</string>
-    <string name="wan_tab_five">我的</string>
-
-
-
-    <string name="menu_title_share">Share</string>
-    <string name="title_share">Share To</string>
-
-
+    <string name="navigation_drawer_open">Open drawer</string>
+    <string name="navigation_drawer_close">Close drawer</string>
+    <!-- system -->
+    <string name="request_fail">RequestFail</string>
+    <string name="exit_app">ExitApp</string>
+    <string name="private_policy">PrivatePolicy</string>
+    <!-- common -->
+    <string name="exit">Exit</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="level">Level</string>
+    <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="save">Save</string>
+    <string name="nickname">NickName</string>
+    <string name="address">Address</string>
+    <string name="next">Next</string>
+    <string name="search">Search</string>
+    <string name="edit">Edit</string>
+    <string name="tip">Tip</string>
+    <!-- 4 tab -->
+    <string name="tab_home">Home</string>
+    <string name="tab_hierarchy">Hierarchy</string>
+    <string name="tab_wx_public_account">PublicAccount</string>
+    <string name="tab_me">Me</string>
+    <string name="tab_beauty">Beauty</string>
+    <!--  me -->
+    <string name="my_coin">MyCoin</string>
+    <string name="my_share">MyShare</string>
+    <string name="my_collection">MyCollection</string>
+    <string name="read_later">ReadLater</string>
+    <string name="my_open_source">OpenSource</string>
+    <string name="about_me">AboutMe</string>
+    <string name="system_setting">SystemSetting</string>
+    <!--  title -->
+    <string name="home">Home</string>
+    <string name="rank_list">RankList</string>
+    <string name="setting">Setting</string>
+    <string name="setting_language">Language</string>
+    <string name="setting_check_update">ChechUpdate</string>
+    <string name="simplified_chinese">SimplifiedChinese</string>
+    <string name="america_english">America English</string>
+    <!-- login -->
+    <string name="login_forget">Forget PW？</string>
+    <string name="login_other_way">Login in Other Way</string>
+    <string name="common_phone_input_hint">Phone Input</string>
+    <string name="common_phone_input_error">Phone Input Error</string>
+    <string name="common_password_input_error">Password Input</string>
+    <string name="common_password_input_unlike">Password Input Unlike</string>
+    <!-- 注册 -->
+    <string name="register_title">Register</string>
+    <string name="register_hint">Register Hint</string>
+    <string name="register_password_hint1">Register Password Hint1</string>
+    <string name="register_password_hint2">Register Password Hint2</string>
+    <!-- code -->
+    <string name="common_code_input_hint">Code Input Hint</string>
+    <string name="common_code_send">Code Send</string>
+    <string name="common_code_send_hint">Code Send Hint</string>
+    <string name="common_code_error_hint">Code Send Error Hint</string>
+    <!-- network -->
+    <string name="common_network_error">Network Error</string>
+    <!-- other -->
+    <string name="viewpager_indicator">%1$d/%2$d</string>
 </resources>

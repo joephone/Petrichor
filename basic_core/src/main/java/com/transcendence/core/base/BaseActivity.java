@@ -1,12 +1,17 @@
 package com.transcendence.core.base;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ViewGroup;
+import android.view.Window;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.transcendence.core.R;
+import com.transcendence.core.base.action.ActivityAction;
+import com.transcendence.core.base.action.ClickAction;
 import com.transcendence.core.base.action.KeyboardAction;
 import com.transcendence.core.statusbar.StatusBarUtil;
 
@@ -17,14 +22,15 @@ import com.transcendence.core.statusbar.StatusBarUtil;
  * @Edition 1.0
  * @EditionHistory
  */
-public abstract class BaseActivity extends AppCompatActivity implements KeyboardAction {
+public abstract class BaseActivity extends AppCompatActivity implements KeyboardAction
+    , ActivityAction, ClickAction {
 
     protected BaseActivity mActivity;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StatusBarUtil.setStatusBarMode(this, true, R.color.white);
+        StatusBarUtil.setStatusBarMode(this, false, R.color.colorGitHubBlack);
         mActivity = this;
         init();
     }
@@ -68,5 +74,15 @@ public abstract class BaseActivity extends AppCompatActivity implements Keyboard
     }
 
 
+    /**
+     * 和 setContentView 对应的方法
+     */
+    public ViewGroup getContentView() {
+        return findViewById(Window.ID_ANDROID_CONTENT);
+    }
 
+    @Override
+    public Context getContext() {
+        return this;
+    }
 }
