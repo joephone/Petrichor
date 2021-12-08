@@ -1,13 +1,19 @@
-package com.transcendence.petrichor.ui.mine.activity;
+package com.transcendence.petrichor.ui.main.activity;
+
+import android.Manifest;
 
 import androidx.viewpager.widget.ViewPager;
 
+import com.tbruyelle.rxpermissions3.RxPermissions;
 import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
+import com.transcendence.core.permission.PermissionPool;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.activity.PetrichorBaseActivity;
 import com.transcendence.petrichor.ui.main.fragment.MainFragment;
+import com.transcendence.petrichor.ui.map.fragment.AmapFragment;
 
 public class MainActivity extends PetrichorBaseActivity {
+
 
 
     private ViewPager mVp;
@@ -39,9 +45,10 @@ public class MainActivity extends PetrichorBaseActivity {
         adapter = new GoweiiFragmentPagerAdapter(getSupportFragmentManager());
         adapter.setTitles("主页面");
         adapter.setFragments(
+                AmapFragment.getInstance(),
                 MainFragment.newInstance("主页面"));
         mVp.setAdapter(adapter);
-        mVp.setCurrentItem(0);
+        mVp.setCurrentItem(1);
 
 //        showPrivacyPolicyDialog();
 //
@@ -53,5 +60,10 @@ public class MainActivity extends PetrichorBaseActivity {
 //                        L.d("download enable");
 //                    }
 //                });
+    }
+
+
+    public void slideToMap(){
+        mVp.setCurrentItem(0);
     }
 }

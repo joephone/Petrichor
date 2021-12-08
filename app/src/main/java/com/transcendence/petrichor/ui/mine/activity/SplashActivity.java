@@ -5,8 +5,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.transcendence.core.global.Global;
+import com.transcendence.core.permission.PermissionPool;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.activity.PetrichorBaseActivity;
+import com.transcendence.petrichor.ui.main.activity.MainActivity;
 import com.transcendence.ui.textview.CountDownTextView;
 
 import java.util.Timer;
@@ -51,7 +53,16 @@ public class SplashActivity extends PetrichorBaseActivity implements View.OnClic
 
     @Override
     protected void initData() {
-
+        rxPermissions
+                .request(PermissionPool.GROUP.PETRICHOR)
+                .subscribe(granted -> {
+                    if (granted) { // Always true pre-M
+                        // I can control the camera now
+                        startMain();
+                    } else {
+                        // Oups permission denied
+                    }
+                });
     }
 
     public void countDown() {

@@ -1,10 +1,5 @@
 ext {
-    isAnimApplication = false
-    isWanApplication = true
     isMapApplication = true
-    isFitzRoyApplication = true
-    isHeimaApplication = true
-    isDouyaApplication = true
 
     android = [
             compileSdkVersion       : 30,
@@ -19,7 +14,6 @@ ext {
             sourceCompatibility: JavaVersion.VERSION_1_8,
             targetCompatibility: JavaVersion.VERSION_1_8,
     ]
-
 
     version = [
             supportSdkVersion               : "28.0.0",  //compile 'com.github.bumptech.glide:glide:3.5.2'  26.1.0  28.0.0

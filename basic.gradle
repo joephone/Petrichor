@@ -39,8 +39,10 @@ android {
 
     sourceSets {
         main {
-            jni.srcDirs = []
-            jniLibs.srcDirs = ['src/main/jniLibs']
+//            jni.srcDirs = []
+//            jniLibs.srcDirs = ['src/main/jniLibs']
+            //amap
+            jniLibs.srcDirs = ['libs']
         }
     }
 

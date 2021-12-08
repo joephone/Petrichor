@@ -8,7 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.fragment.PetrichorBaseFragment;
-import com.transcendence.petrichor.ui.mine.activity.MainActivity;
+import com.transcendence.petrichor.ui.main.activity.MainActivity;
 import com.transcendence.petrichor.ui.mine.fragment.MineFragment;
 import com.transcendence.ui.widget.custom.TabView;
 
@@ -38,6 +38,7 @@ public class MainFragment extends PetrichorBaseFragment<MainActivity> implements
     TabView mTabThree;
     TabView mTabFour;
     TabView mTabFive;
+
 
     private List<TabView> mTabs = new ArrayList<>();
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

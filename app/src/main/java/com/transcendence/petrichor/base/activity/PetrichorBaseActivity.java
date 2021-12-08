@@ -10,6 +10,7 @@ import androidx.annotation.StringRes;
 
 import com.gyf.immersionbar.ImmersionBar;
 import com.hjq.bar.TitleBar;
+import com.tbruyelle.rxpermissions3.RxPermissions;
 import com.transcendence.core.base.BaseActivity;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.action.TitleBarAction;
@@ -25,7 +26,7 @@ import com.transcendence.petrichor.base.action.ToastAction;
 public abstract class PetrichorBaseActivity extends BaseActivity
     implements ToastAction, TitleBarAction {
 
-
+    protected final RxPermissions rxPermissions = new RxPermissions(this);
     /** 标题栏对象 */
     private TitleBar mTitleBar;
     /** 状态栏沉浸 */

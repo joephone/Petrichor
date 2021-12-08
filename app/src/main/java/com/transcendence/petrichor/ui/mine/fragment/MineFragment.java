@@ -1,22 +1,15 @@
 package com.transcendence.petrichor.ui.mine.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import androidx.annotation.Nullable;
-
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.fragment.PetrichorBaseFragment;
 import com.transcendence.petrichor.ui.mine.activity.LoginActivity;
-import com.transcendence.petrichor.ui.mine.activity.MainActivity;
+import com.transcendence.petrichor.ui.main.activity.MainActivity;
 import com.transcendence.ui.scroll.HeaderZoomLayout;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @Author Joephone on 2021/12/3 0003 下午 4:01

@@ -39,6 +39,7 @@
     <!--  title -->
     <string name="home">首页</string>
     <string name="rank_list">排行榜</string>
+    <string name="map">地图</string>
     <string name="setting">设置</string>
     <string name="setting_language">语言设置</string>
     <string name="setting_check_update">检查更新</string>

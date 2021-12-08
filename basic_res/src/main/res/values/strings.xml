@@ -39,6 +39,7 @@
     <!--  title -->
     <string name="home">Home</string>
     <string name="rank_list">RankList</string>
+    <string name="map">Map</string>
     <string name="setting">Setting</string>
     <string name="setting_language">Language</string>
     <string name="setting_check_update">ChechUpdate</string>

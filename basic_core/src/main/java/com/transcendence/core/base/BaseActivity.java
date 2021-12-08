@@ -3,8 +3,10 @@ package com.transcendence.core.base;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,7 +32,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Keyboard
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StatusBarUtil.setStatusBarMode(this, false, R.color.colorGitHubBlack);
+//        StatusBarUtil.setStatusBarMode(this, false, R.color.colorGitHubBlack);
         mActivity = this;
         init();
     }
@@ -85,4 +87,23 @@ public abstract class BaseActivity extends AppCompatActivity implements Keyboard
     public Context getContext() {
         return this;
     }
+
+    //记录用户首次点击返回键的时间
+    private long mExitTime=0;
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK:
+                if (System.currentTimeMillis() - mExitTime > 2000) {
+                    Toast.makeText(mActivity,"再按一次返回键退出程序",Toast.LENGTH_SHORT).show();
+                    mExitTime = System.currentTimeMillis();
+                    return true;
+                } else {
+                    System.exit(0);
+                }
+                break;
+        }
+        return super.onKeyUp(keyCode, event);
+    }
+
 }

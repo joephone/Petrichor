@@ -16,6 +16,7 @@
     <dimen name="button_height">44dp</dimen>
     <dimen name="button_radius">3dp</dimen>
     <dimen name="action_bar_bottom_tab_height">36dp</dimen>
+    <dimen name="status_view_height">25dp</dimen>
 
     <dimen name="line">1sp</dimen>
 

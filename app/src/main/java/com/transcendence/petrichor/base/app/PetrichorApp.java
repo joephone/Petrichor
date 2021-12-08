@@ -14,6 +14,7 @@ import androidx.lifecycle.LifecycleOwner;
 import com.hjq.toast.ToastInterceptor;
 import com.hjq.toast.ToastUtils;
 import com.hjq.toast.style.ToastBlackStyle;
+import com.transcendence.core.base.app.LibApplication;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.manager.ActivityManager;
 
@@ -24,7 +25,7 @@ import com.transcendence.petrichor.base.manager.ActivityManager;
  * @Edition 1.0
  * @EditionHistory
  */
-public final class PetrichorApp extends Application {
+public final class PetrichorApp extends LibApplication {
 
     @Override
     public void onCreate() {
