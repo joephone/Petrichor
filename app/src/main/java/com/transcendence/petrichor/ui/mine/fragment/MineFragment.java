@@ -4,11 +4,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.appcompat.widget.AppCompatImageView;
 
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.fragment.PetrichorBaseFragment;
 import com.transcendence.petrichor.ui.mine.activity.LoginActivity;
 import com.transcendence.petrichor.ui.main.activity.MainActivity;
+import com.transcendence.petrichor.ui.mine.activity.LuckyPanelActivity;
+import com.transcendence.petrichor.ui.setting.activity.SettingActivity;
 import com.transcendence.ui.scroll.HeaderZoomLayout;
 
 /**
@@ -23,6 +28,8 @@ public class MineFragment extends PetrichorBaseFragment<MainActivity> implements
     private LinearLayout ll_setting,ll_top;
     private HeaderZoomLayout mScroll;
     private FrameLayout fl_mine;
+    private AppCompatImageView mIvAvatar;
+    private TextView mTvSign;
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_SHOW_TEXT = "text";
 
@@ -54,6 +61,10 @@ public class MineFragment extends PetrichorBaseFragment<MainActivity> implements
         mScroll.setOnScrollListener(this);
         ll_top = (LinearLayout) findViewById(R.id.ll_top);
         ll_top.setOnClickListener(this);
+        mIvAvatar = (AppCompatImageView) findViewById(R.id.iv_avatar);
+        mIvAvatar.setOnClickListener(this);
+        mTvSign = (TextView) findViewById(R.id.tv_sign_in);
+        mTvSign.setOnClickListener(this);
     }
 
     @Override
@@ -65,10 +76,13 @@ public class MineFragment extends PetrichorBaseFragment<MainActivity> implements
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ll_setting:
-
+                SettingActivity.start(getActivity());
                 break;
             case R.id.ll_top:
                 LoginActivity.start(getActivity());
+                break;
+            case R.id.tv_sign_in:
+                LuckyPanelActivity.start(getActivity());
                 break;
         }
     }

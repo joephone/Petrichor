@@ -13,9 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.transcendence.core.R;
 import com.transcendence.core.base.action.ActivityAction;
+import com.transcendence.core.base.action.BundleAction;
 import com.transcendence.core.base.action.ClickAction;
 import com.transcendence.core.base.action.KeyboardAction;
 import com.transcendence.core.statusbar.StatusBarUtil;
+import com.transcendence.core.utils.StatusBarUtils;
 
 /**
  * @Author Joephone on 2021/12/1 0001 下午 5:41
@@ -25,7 +27,7 @@ import com.transcendence.core.statusbar.StatusBarUtil;
  * @EditionHistory
  */
 public abstract class BaseActivity extends AppCompatActivity implements KeyboardAction
-    , ActivityAction, ClickAction {
+    , ActivityAction, BundleAction,ClickAction {
 
     protected BaseActivity mActivity;
 
@@ -34,6 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Keyboard
         super.onCreate(savedInstanceState);
 //        StatusBarUtil.setStatusBarMode(this, false, R.color.colorGitHubBlack);
         mActivity = this;
+        StatusBarUtils.with(mActivity).init();
         init();
     }
 
@@ -75,6 +78,20 @@ public abstract class BaseActivity extends AppCompatActivity implements Keyboard
         overridePendingTransition(R.anim.wan_zoom_small_in, R.anim.wan_zoom_small_out);
     }
 
+    /**
+     * 如果当前的 Activity（singleTop 启动模式） 被复用时会回调
+     */
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        // 设置为当前的 Intent，避免 Activity 被杀死后重启 Intent 还是最原先的那个
+        setIntent(intent);
+    }
+
+    @Override
+    public Bundle getBundle() {
+        return getIntent().getExtras();
+    }
 
     /**
      * 和 setContentView 对应的方法
@@ -88,22 +105,6 @@ public abstract class BaseActivity extends AppCompatActivity implements Keyboard
         return this;
     }
 
-    //记录用户首次点击返回键的时间
-    private long mExitTime=0;
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        switch (keyCode) {
-            case KeyEvent.KEYCODE_BACK:
-                if (System.currentTimeMillis() - mExitTime > 2000) {
-                    Toast.makeText(mActivity,"再按一次返回键退出程序",Toast.LENGTH_SHORT).show();
-                    mExitTime = System.currentTimeMillis();
-                    return true;
-                } else {
-                    System.exit(0);
-                }
-                break;
-        }
-        return super.onKeyUp(keyCode, event);
-    }
+
 
 }

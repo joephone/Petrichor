@@ -108,8 +108,7 @@ public class AmapHelper extends AppCompatActivity implements
             moveToDefaultPosition();
             aMap.setOnCameraChangeListener(this);
         }
-
-        initLocation();
+//        initLocation();
         initBitmap();
     }
 
@@ -169,8 +168,8 @@ public class AmapHelper extends AppCompatActivity implements
      * 定位
      */
     private void initLocation() {
-        mLocationTask= LocationTask.getInstance(mContext);
-//        mLocationTask.startLocation();
+        mLocationTask = LocationTask.getInstance(mContext);
+        mLocationTask.startLocation();
         mLocationTask.setListener(this);
     }
 

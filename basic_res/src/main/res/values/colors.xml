@@ -6,6 +6,7 @@
     <color name="colorTheme">#24292E</color>
 
     <color name="theme_tudor_red">#E71B64</color>
+    <color name="theme_tudor_red_press">#E95B64</color>
     <color name="theme_tudor_white">#FFFFF0</color>
     <color name="main">@color/theme_tudor_red</color>
 

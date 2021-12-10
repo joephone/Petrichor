@@ -47,13 +47,9 @@ public class LoginActivity extends PetrichorBaseActivity {
 
     @Override
     protected void initData() {
-
+//        // 跳转到注册界面
+//        RegisterActivity.start(LoginActivity.this);
     }
 
-    @Override
-    public void onRightClick(View view) {
-        Log.d(Global.TAG,"onRightClick");
-        // 跳转到注册界面
-        RegisterActivity.start(LoginActivity.this);
-    }
+
 }

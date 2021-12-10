@@ -35,6 +35,7 @@ public class HomeFragment extends PetrichorBaseFragment<MainActivity> {
 
     @Override
     protected void initView() {
+        setTitle(getString(R.string.home));
         fl_back = (FrameLayout) findViewById(R.id.fl_back);
         fl_back.setOnClickListener(new View.OnClickListener() {
             @Override

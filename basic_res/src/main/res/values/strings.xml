@@ -36,6 +36,7 @@
     <string name="my_open_source">OpenSource</string>
     <string name="about_me">AboutMe</string>
     <string name="system_setting">SystemSetting</string>
+    <string name="sign">Sign</string>
     <!--  title -->
     <string name="home">Home</string>
     <string name="rank_list">RankList</string>
@@ -62,6 +63,15 @@
     <string name="common_code_send">Code Send</string>
     <string name="common_code_send_hint">Code Send Hint</string>
     <string name="common_code_error_hint">Code Send Error Hint</string>
+    <!-- lan -->
+    <string name="lan_chinese">Chinese</string>
+    <string name="lan_en">English</string>
+    <string name="lan_ja">Japanese</string>
+    <string name="lan_de">Deutsch</string>
+    <!-- lucky panel -->
+    <string name="lucky_panel_title">Wheel of Fortune</string>
+    <string name="lucky_panel_times_left">times left</string>
+    <string name="lucky_panel_fortune_list">Check out your fortune list</string>
     <!-- network -->
     <string name="common_network_error">Network Error</string>
     <!-- other -->

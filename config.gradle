@@ -32,7 +32,7 @@ ext {
             actionBarEx                     : "3.2.1",
             materialProgressBar             : "1.4.2",
             swipeBack                       : "1.1.0",
-            smartRefreshLayout              : "2.0.3",    // 1.1.0
+            smartRefreshLayout              : "1.1.0-alpha-21",    // 1.1.0
 
             anyDialog                       : "3.0.3",
             anyLayer                        : "3.0.0",
@@ -62,6 +62,15 @@ ext {
             constraintLayout                : "com.android.support.constraint:constraint-layout:$version.constraintLayout",
             supportv4                       : "com.android.support:support-v4:$version.supportSdkVersion",
 
+
+            gson                            : "com.google.code.gson:gson:$version.gson",
+            eventbus                        : "org.greenrobot:eventbus:$version.eventbus",
+
+
+            // ui
+            "SmartRefreshLayout"           : "com.scwang.smartrefresh:SmartRefreshLayout:$version.smartRefreshLayout",
+            "SmartRefreshHeader"           : "com.scwang.smartrefresh:SmartRefreshHeader:$version.smartRefreshLayout",
+            "banner"                       : "com.youth.banner:banner:1.4.10",
     ]
 
 

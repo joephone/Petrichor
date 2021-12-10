@@ -50,8 +50,12 @@ public class LocationTask implements LocationSource,AMapLocationListener{
         return INSTANCE;
     }
 
-    private void initAmap(Context context) throws Exception {
-        mlocationClient = new AMapLocationClient(context);
+    private void initAmap(Context context) {
+        try {
+            mlocationClient = new AMapLocationClient(context);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         mLocationOption = new AMapLocationClientOption();
         // 设置定位监听
         mlocationClient.setLocationListener(this);
@@ -62,7 +66,7 @@ public class LocationTask implements LocationSource,AMapLocationListener{
         // 设置定位参数
         mlocationClient.setLocationOption(mLocationOption);
 
-        startLocation();
+//        startLocation();
     }
 
     /**

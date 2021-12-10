@@ -1,9 +1,10 @@
-package com.transcendence.petrichor.ui.mine.activity;
+package com.transcendence.petrichor.ui.main.activity;
 
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.transcendence.core.base.BaseActivity;
 import com.transcendence.core.global.Global;
 import com.transcendence.core.permission.PermissionPool;
 import com.transcendence.petrichor.R;

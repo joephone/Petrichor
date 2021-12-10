@@ -35,6 +35,10 @@ dependencies {
     api config.dependencies.supportv4
     api config.dependencies.constraintLayout
 
+    api config.dependencies.eventbus
+
+    api config.dependencies.SmartRefreshLayout
+
 
     //3D地图so及jar
     implementation 'com.amap.api:3dmap:latest.integration'

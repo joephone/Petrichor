@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_public"
+    android:orientation="vertical">
+
+    <include layout="@layout/title" />
+
+    <!-- 第1排  setting_language -->
+    <LinearLayout
+        android:id="@+id/ll_language"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_standard_layout"
+        android:background="@drawable/water_effect_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <!--<ImageView-->
+        <!--android:layout_width="18dp"-->
+        <!--android:layout_height="18dp"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:src="@drawable/ic_setting"-->
+        <!--android:tint="@color/main" />-->
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="@string/setting_language"
+            android:textColor="@color/text_surface"
+            android:textSize="@dimen/text_content" />
+
+        <TextView
+            android:id="@+id/tv_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/text_third"
+            android:textSize="@dimen/text_notes"
+            tools:text="@string/simplified_chinese" />
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:rotation="180"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back"
+            android:tint="@color/third" />
+
+    </LinearLayout>
+
+
+    <!-- 第2排  setting_check -->
+    <LinearLayout
+        android:id="@+id/ll_check_update"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_standard_layout"
+        android:background="@drawable/water_effect_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="@string/setting_check_update"
+            android:textColor="@color/text_surface"
+            android:textSize="@dimen/text_content" />
+
+        <TextView
+            android:id="@+id/tv_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            android:background="@drawable/bg_new_red"
+            android:singleLine="true"
+            android:text="new"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_notes" />
+
+
+    </LinearLayout>
+
+
+    <!-- 第3排  清除缓存 -->
+    <LinearLayout
+        android:id="@+id/ll_cache"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_height="@dimen/height_standard_layout"
+        android:background="@drawable/water_effect_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <!--<ImageView-->
+            <!--android:layout_width="18dp"-->
+            <!--android:layout_height="18dp"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:src="@drawable/ic_setting"-->
+            <!--android:tint="@color/main" />-->
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="清除缓存"
+            android:textColor="@color/text_surface"
+            android:textSize="@dimen/text_content" />
+
+        <TextView
+            android:id="@+id/tv_cache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/text_third"
+            android:textSize="@dimen/text_notes"
+            tools:text="100MB" />
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:rotation="180"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back"
+            android:tint="@color/third" />
+
+    </LinearLayout>
+
+    <!-- 第4排  alipay -->
+    <LinearLayout
+        android:id="@+id/ll_alipay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_standard_layout"
+        android:background="@drawable/water_effect_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <!--<ImageView-->
+        <!--android:layout_width="18dp"-->
+        <!--android:layout_height="18dp"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:src="@drawable/ic_setting"-->
+        <!--android:tint="@color/main" />-->
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="支付宝"
+            android:textColor="@color/text_surface"
+            android:textSize="@dimen/text_content" />
+
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:rotation="180"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back"
+            android:tint="@color/third" />
+
+
+    </LinearLayout>
+
+
+    <!-- 第8排  退出 -->
+    <LinearLayout
+        android:id="@+id/ll_logout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_height="@dimen/height_standard_layout"
+        android:background="@drawable/water_effect_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:gravity="center"
+            android:text="@string/exit"
+            android:textColor="@color/colorGitHubGreenPress"
+            android:textSize="@dimen/text_title" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

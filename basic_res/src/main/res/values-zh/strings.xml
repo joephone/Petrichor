@@ -36,6 +36,7 @@
     <string name="my_open_source">开源项目</string>
     <string name="about_me">关于作者</string>
     <string name="system_setting">系统设置</string>
+    <string name="sign">签到</string>
     <!--  title -->
     <string name="home">首页</string>
     <string name="rank_list">排行榜</string>
@@ -62,6 +63,15 @@
     <string name="common_code_send">发送验证码</string>
     <string name="common_code_send_hint">验证码已发送，请注意查收</string>
     <string name="common_code_error_hint">验证码错误，请检查输入</string>
+    <!-- lan -->
+    <string name="lan_chinese">简体中文</string>
+    <string name="lan_en">英文</string>
+    <string name="lan_ja">日文</string>
+    <string name="lan_de">德文</string>
+    <!-- lucky panel -->
+    <string name="lucky_panel_title">Wheel of Fortune</string>
+    <string name="lucky_panel_times_left">times left</string>
+    <string name="lucky_panel_fortune_list">Check out your fortune list</string>
     <!-- network -->
     <string name="common_network_error">当前网络不可用，请检查网络设置</string>
     <!-- other -->

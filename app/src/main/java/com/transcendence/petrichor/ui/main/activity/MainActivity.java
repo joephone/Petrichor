@@ -1,6 +1,8 @@
 package com.transcendence.petrichor.ui.main.activity;
 
 import android.Manifest;
+import android.view.KeyEvent;
+import android.widget.Toast;
 
 import androidx.viewpager.widget.ViewPager;
 
@@ -36,7 +38,16 @@ public class MainActivity extends PetrichorBaseActivity {
 
     @Override
     protected void initData() {
+        rxPermissions
+                .request(PermissionPool.MANAGE_EXTERNAL_STORAGE)
+                .subscribe(granted -> {
+                    if (granted) { // Always true pre-M
+                        // I can control the camera now
 
+                    } else {
+                        // Oups permission denied
+                    }
+                });
     }
 
     private void initVP() {
@@ -66,4 +77,23 @@ public class MainActivity extends PetrichorBaseActivity {
     public void slideToMap(){
         mVp.setCurrentItem(0);
     }
+
+    //记录用户首次点击返回键的时间
+    private long mExitTime=0;
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK:
+                if (System.currentTimeMillis() - mExitTime > 2000) {
+                    Toast.makeText(mActivity,"再按一次返回键退出程序",Toast.LENGTH_SHORT).show();
+                    mExitTime = System.currentTimeMillis();
+                    return true;
+                } else {
+                    System.exit(0);
+                }
+                break;
+        }
+        return super.onKeyUp(keyCode, event);
+    }
+
 }
