@@ -10,6 +10,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.fragment.PetrichorBaseFragment;
+import com.transcendence.petrichor.ui.mine.activity.DuangActivity;
 import com.transcendence.petrichor.ui.mine.activity.LoginActivity;
 import com.transcendence.petrichor.ui.main.activity.MainActivity;
 import com.transcendence.petrichor.ui.mine.activity.LuckyPanelActivity;

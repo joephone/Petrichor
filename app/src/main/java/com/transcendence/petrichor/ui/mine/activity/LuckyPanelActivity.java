@@ -29,9 +29,11 @@ public class LuckyPanelActivity extends PetrichorBaseActivity {
     private LuckyPanelView lucky_panel;
     private Button btn_action;
 
-    private MediaPlayer mPlayer2;
     private SoundPool mSound2;
     private HashMap<Integer, Integer> soundPoolMap2;
+
+    private SoundPool mSoundPool = null;
+    private HashMap<Integer, Integer> soundID = new HashMap<>();
 
     public static void start(Context context) {
         Intent intent = new Intent(context, LuckyPanelActivity.class);
@@ -59,8 +61,6 @@ public class LuckyPanelActivity extends PetrichorBaseActivity {
                     long delay = 2000;
 
                     playSound2(1,0);
-//                    L.logE("delay----"+delay);
-//        L.logE("duration----"+duration);
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -95,13 +95,10 @@ public class LuckyPanelActivity extends PetrichorBaseActivity {
      * 初始化声音
      */
     private void initSounds2() {
-        // 设置播放音效
-        mPlayer2 = MediaPlayer.create(this, R.raw.nine_grid_lottery);
-        // 第一个参数为同时播放数据流的最大个数，第二数据流类型，第三为声音质量
-        mSound2 = new SoundPool(4, AudioManager.STREAM_MUSIC, 100);
-        soundPoolMap2 = new HashMap<>();
-        soundPoolMap2.put(1, mSound2.load(this, R.raw.nine_grid_lottery, 1));
-        //可以在后面继续put音效文件
+
+
+        mSoundPool = new SoundPool(5, AudioManager.STREAM_SYSTEM, 100);
+        soundID.put(1, mSoundPool.load(this, R.raw.duang, 1));
     }
 
     /**
@@ -113,16 +110,6 @@ public class LuckyPanelActivity extends PetrichorBaseActivity {
      *            是否循环
      */
     private void playSound2(int sound, int loop) {
-        AudioManager mgr = (AudioManager) this
-                .getSystemService(Context.AUDIO_SERVICE);
-        // 获取系统声音的当前音量
-        float currentVolume = mgr.getStreamVolume(AudioManager.STREAM_MUSIC);
-        // 获取系统声音的最大音量
-        float maxVolume = mgr.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-        // 获取当前音量的百分比
-        float volume = currentVolume / maxVolume;
-
-        // 第一个参数是声效ID,第二个是左声道音量，第三个是右声道音量，第四个是流的优先级，最低为0，第五个是是否循环播放，第六个播放速度(1.0 =正常播放,范围0.5 - 2.0)
-        mSound2.play(soundPoolMap2.get(sound), volume, volume, 1, loop, 1f);
+        mSoundPool.play(soundID.get(1), 1, 1, 0, 0, 1);
     }
 }

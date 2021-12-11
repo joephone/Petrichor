@@ -71,6 +71,11 @@
             android:launchMode="singleTask"/>
 
         <activity
+            android:name=".ui.mine.activity.DuangActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+
+        <activity
             android:name=".ui.setting.activity.SettingActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTask"/>
