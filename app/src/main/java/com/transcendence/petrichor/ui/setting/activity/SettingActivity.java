@@ -20,7 +20,7 @@ public class SettingActivity extends PetrichorBaseActivity {
 
 
     TextView tvCache;
-    private LinearLayout llLanguage,llCheckUpdate,llCache,llAlipay,llLogout;
+    private LinearLayout llLanguage,llCheckUpdate,llCache,llMulti,llLogout;
 
     @Override
     protected int getLayoutId() {
@@ -38,8 +38,8 @@ public class SettingActivity extends PetrichorBaseActivity {
         llCheckUpdate.setOnClickListener(this);
         llCache = findViewById(R.id.ll_cache);
         llCache.setOnClickListener(this);
-        llAlipay = findViewById(R.id.ll_alipay);
-        llAlipay.setOnClickListener(this);
+        llMulti = findViewById(R.id.ll_multi);
+        llMulti.setOnClickListener(this);
         llLogout = findViewById(R.id.ll_logout);
         llLogout.setOnClickListener(this);
 //        if(!UserUtils.getInstance().isLogin()){
@@ -83,8 +83,8 @@ public class SettingActivity extends PetrichorBaseActivity {
             case R.id.ll_cache:
 //                presenter.clearCache();
                 break;
-            case R.id.ll_alipay:
-//                AliPayUtils.showDonateDialog(this);
+            case R.id.ll_multi:
+                MultiSettingActivity.start(getContext());
                 break;
             case R.id.ll_logout:
 //                if(UserUtils.getInstance().toDoIfLogin(getContext())){

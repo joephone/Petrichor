@@ -34,7 +34,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/bg_count_down_kugoo_style"
         android:gravity="center"

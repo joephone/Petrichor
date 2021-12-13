@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.transcendence.petrichor">
 
-
     <!-- 网络相关 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -26,6 +25,10 @@
     <!-- 定位权限（用于 WebView 定位）-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 指纹权限 -->
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".base.app.PetrichorApp"
@@ -37,12 +40,12 @@
         tools:ignore="LockedOrientationActivity"
         android:theme="@style/WanAppTheme">
 
-
+        <!--  android:theme="@style/splash" -->
         <activity
             android:name=".ui.main.activity.SplashActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTask"
-            android:theme="@style/splash">
+           >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -85,7 +88,20 @@
             android:screenOrientation="portrait"
             android:launchMode="singleTask"/>
 
+        <activity
+            android:name=".ui.setting.activity.MultiSettingActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
 
+        <activity
+            android:name=".ui.setting.gesture.activity.SettingGestureLockActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+
+        <activity
+            android:name=".ui.setting.gesture.activity.VerifyGestureLockActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
 
         <!-- 高德地图  -->
         <meta-data

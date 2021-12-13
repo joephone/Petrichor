@@ -1,13 +1,10 @@
 package com.transcendence.petrichor.base.fragment;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-
-import com.transcendence.core.base.BaseFragment;
+import com.transcendence.core.base.fragment.BaseFragment;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.action.ToastAction;
 import com.transcendence.petrichor.base.activity.PetrichorBaseActivity;

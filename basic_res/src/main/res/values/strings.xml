@@ -63,6 +63,11 @@
     <string name="common_code_send">Code Send</string>
     <string name="common_code_send_hint">Code Send Hint</string>
     <string name="common_code_error_hint">Code Send Error Hint</string>
+    <!-- setting -->
+    <string name="multi_setting">Multi Setting</string>
+    <string name="finger_print">Finger Print</string>
+    <string name="set_gesture">Set Gesture</string>
+    <string name="verify_gesture">Verify Gesture</string>
     <!-- lan -->
     <string name="lan_chinese">Chinese</string>
     <string name="lan_en">English</string>

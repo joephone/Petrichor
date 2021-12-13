@@ -1,8 +1,6 @@
-package com.transcendence.core.base;
+package com.transcendence.core.base.fragment;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -14,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
 
-import com.transcendence.core.base.action.ActivityAction;
+import com.transcendence.core.base.BaseActivity;
 import com.transcendence.core.base.action.BundleAction;
 import com.transcendence.core.base.action.ClickAction;
 
@@ -36,6 +34,8 @@ public abstract class BaseFragment<A extends BaseActivity> extends Fragment impl
     private View mRootView;
     /** 当前是否加载过 */
     private boolean mLoading;
+    /** Fragment当前状态是否可见 */
+    protected boolean isVisible;
 
     @SuppressWarnings("unchecked")
     @Override
@@ -47,14 +47,20 @@ public abstract class BaseFragment<A extends BaseActivity> extends Fragment impl
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        if (getLayoutId() <= 0) {
-            return null;
+//        if (getLayoutId() <= 0) {
+//            return null;
+//        }
+        if (mRootView == null) {
+            final int layoutId = getLayoutId();
+            if (layoutId > 0) {
+                mRootView = inflater.inflate(getLayoutId(), container, false);
+                initView();
+            }
         }
-
         mLoading = false;
-        mRootView = inflater.inflate(getLayoutId(), container, false);
-        initView();
+        isVisible = true;
         return mRootView;
+
     }
 
     @Override
@@ -90,6 +96,7 @@ public abstract class BaseFragment<A extends BaseActivity> extends Fragment impl
     public void onDestroyView() {
         super.onDestroyView();
         mRootView = null;
+        isVisible = false;
     }
 
     @Override
