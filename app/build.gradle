@@ -36,16 +36,22 @@ dependencies {
     api config.dependencies.constraintLayout
 
     api config.dependencies.eventbus
-
+    api config.dependencies.gson
     api config.dependencies.SmartRefreshLayout
 
+//    //3D地图so及jar latest.integration
+//    implementation 'com.amap.api:3dmap:8.1.0'
+//    //定位功能
+//    implementation 'com.amap.api:location:5.6.1'
+//    //搜索功能
+//    implementation 'com.amap.api:search:8.1.0'
 
-    //3D地图so及jar
-    implementation 'com.amap.api:3dmap:latest.integration'
+    //3D地图so及jar latest.integration
+    implementation 'com.amap.api:3dmap:6.8.0'
     //定位功能
-    implementation 'com.amap.api:location:latest.integration'
+    implementation 'com.amap.api:location:3.7.0'
     //搜索功能
-    implementation 'com.amap.api:search:latest.integration'
+    implementation 'com.amap.api:search:5.7.0'
 
 
     // 标题栏框架：https://github.com/getActivity/TitleBar
@@ -67,3 +73,16 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxjava:3.0.4'
 
 }
+
+/**
+
+ *
+ *   发布者: CN=joephone, OU=tech, O=transcendence, L=wuhan, ST=hubei, C=086
+ *          证书指纹:
+ *          MD5: C5:E1:8A:5E:13:4F:01:DB:BC:70:67:7D:B0:A3:E0:F1
+ *          SHA1: E5:76:2E:D1:96:ED:11:30:AD:62:7E:F5:11:6A:DC:6A:DD:02:6E:6B
+ *          SHA256: 9C:FC:99:0E:14:A3:50:A0:C4:71:5F:FC:F7:E8:16:A1:2E:A1:40:30:45:
+ * DE:60:3B:79:A2:B5:61:EF:EC:CD:BE
+ *          签名算法名称: SHA256withRSA
+ *          版本: 3
+ */

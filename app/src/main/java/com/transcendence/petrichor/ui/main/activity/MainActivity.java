@@ -11,6 +11,7 @@ import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.core.permission.PermissionPool;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.activity.PetrichorBaseActivity;
+import com.transcendence.petrichor.ui.loc.fragment.WeixinLocFragment;
 import com.transcendence.petrichor.ui.main.fragment.MainFragment;
 import com.transcendence.petrichor.ui.map.fragment.AmapFragment;
 
@@ -56,7 +57,7 @@ public class MainActivity extends PetrichorBaseActivity {
         adapter = new GoweiiFragmentPagerAdapter(getSupportFragmentManager());
         adapter.setTitles("主页面");
         adapter.setFragments(
-                AmapFragment.getInstance(),
+                WeixinLocFragment.newInstance(),  //AmapFragment.getInstance(),
                 MainFragment.newInstance("主页面"));
         mVp.setAdapter(adapter);
         mVp.setCurrentItem(1);

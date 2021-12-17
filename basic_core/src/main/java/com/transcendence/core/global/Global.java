@@ -39,6 +39,15 @@ public class Global {
         public static final String APP_BADGE = "appBadge";
         public static final String LOCALE_LANGUAGE = "locale_language";
         public static final String LOCALE_COUNTRY = "locale_country";
+        /**
+         * 记录定位信息
+         */
+        public static final String LOCATION_INFO = "locationInfo";
+
+        /**
+         * 记录搜索信息
+         */
+        public static final String SEARCH_INFO = "searchInfo";
     }
 
     public final class EVENT_BUS {

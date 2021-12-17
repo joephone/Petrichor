@@ -9,6 +9,7 @@ import android.view.animation.DecelerateInterpolator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationClient;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.CameraUpdateFactory;
 import com.amap.api.maps.MapView;
@@ -103,12 +104,14 @@ public class AmapHelper extends AppCompatActivity implements
     }
 
     protected void initHelper() {
+//        AMapLocationClient.updatePrivacyAgree(mContext, true);
+//        AMapLocationClient.updatePrivacyShow(mContext, true, true);
         if (aMap != null) {
             setAmap();
             moveToDefaultPosition();
             aMap.setOnCameraChangeListener(this);
         }
-//        initLocation();
+        initLocation();
         initBitmap();
     }
 

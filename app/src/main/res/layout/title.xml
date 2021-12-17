@@ -30,6 +30,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/dp_10"
                 android:gravity="center"
+                android:visibility="invisible"
                 android:src="@drawable/ic_back_white_24dp"
                 />
         </FrameLayout>
@@ -52,16 +53,33 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/standard_padding"
-            android:visibility="gone">
+            android:layout_marginRight="@dimen/standard_padding">
+
+
+            <TextView
+                android:id="@+id/tv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:gravity="center|right"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_title"
+                tools:text="右" />
 
             <ImageView
                 android:id="@+id/iv_right"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
+                android:visibility="invisible"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center_vertical"
                 android:gravity="center" />
+
+
+
 
         </FrameLayout>
 

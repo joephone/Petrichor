@@ -88,83 +88,82 @@ public class MineFragment extends PetrichorBaseFragment<MainActivity> implements
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser && isFirstGo) {
-            //相当于onResume initData();
-            NewbieGuide.with(getActivity())
-                    .setLabel("page")
-                    .setOnPageChangedListener(new OnPageChangedListener() {
-                        @Override
-                        public void onPageChanged(int page) {
-                            Toast.makeText(getActivity(), "当前page" + page, Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addGuidePage(GuidePage.newInstance()
-                                    .addHighLight(findViewById(R.id.fl_mine), HighLight.Shape.RECTANGLE,
-                                            new RelativeGuide(R.layout.newguide_relative, Gravity.TOP, 0))
-                                    .setLayoutRes(R.layout.newguide_simple)
-                                    .setOnLayoutInflatedListener(new OnLayoutInflatedListener() {
-                                        @Override
-                                        public void onLayoutInflated(View view, final Controller controller) {
-                                            Button button = view.findViewById(R.id.btn_next);
-                                            button.setText("下一步");
-                                            button.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View view) {
-                                                    controller.showPage(1);
-                                                }
-                                            });
-                                        }
-                                    })
-                        /*.setEnterAnimation(enterAnimation)//进入动画
-                        .setExitAnimation(exitAnimation)//退出动画*/
-                    )
-                    .addGuidePage(GuidePage.newInstance()
-                            .addHighLight(findViewById(R.id.iv_avatar), HighLight.Shape.RECTANGLE,
-                                    new RelativeGuide(R.layout.newguide_relative, Gravity.RIGHT))
-                            .setLayoutRes(R.layout.newguide_simple)
-                            .setOnLayoutInflatedListener(new OnLayoutInflatedListener() {
-                                @Override
-                                public void onLayoutInflated(View view, final Controller controller) {
-                                    Button button = view.findViewById(R.id.btn_next);
-                                    button.setText("下一步");
-                                    button.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            controller.showPage(2);
-                                        }
-                                    });
-                                }
-                            })
-                    )
-                    .addGuidePage(GuidePage.newInstance()
-                            .addHighLight(findViewById(R.id.tv_name), HighLight.Shape.RECTANGLE,
-                                    new RelativeGuide(R.layout.newguide_relative, Gravity.LEFT))
-                            .setLayoutRes(R.layout.newguide_simple)
-                            .setOnLayoutInflatedListener(new OnLayoutInflatedListener() {
-                                @Override
-                                public void onLayoutInflated(View view, final Controller controller) {
-                                    Button button = view.findViewById(R.id.btn_next);
-                                    button.setText("下一步");
-                                    button.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            controller.showPage(3);
-                                        }
-                                    });
-                                }
-                            })
-                    )
-                    .addGuidePage(GuidePage.newInstance()
-                            .addHighLight(findViewById(R.id.tv_sign_in), HighLight.Shape.RECTANGLE,
-                                    new RelativeGuide(R.layout.newguide_relative, Gravity.LEFT))
-                    )
-                    .alwaysShow(true)
-                    .show();
-            SPUtils.getInstance().save(Global.SP_KEY.APP_FIRST_START, false);
-        } else {
-            //相当于onPause
-        }
-
+//        if (isVisibleToUser && isFirstGo) {
+//            //相当于onResume initData();
+//            NewbieGuide.with(getActivity())
+//                    .setLabel("page")
+//                    .setOnPageChangedListener(new OnPageChangedListener() {
+//                        @Override
+//                        public void onPageChanged(int page) {
+//                            Toast.makeText(getActivity(), "当前page" + page, Toast.LENGTH_SHORT).show();
+//                        }
+//                    })
+//                    .addGuidePage(GuidePage.newInstance()
+//                                    .addHighLight(findViewById(R.id.fl_mine), HighLight.Shape.RECTANGLE,
+//                                            new RelativeGuide(R.layout.newguide_relative, Gravity.TOP, 0))
+//                                    .setLayoutRes(R.layout.newguide_simple)
+//                                    .setOnLayoutInflatedListener(new OnLayoutInflatedListener() {
+//                                        @Override
+//                                        public void onLayoutInflated(View view, final Controller controller) {
+//                                            Button button = view.findViewById(R.id.btn_next);
+//                                            button.setText("下一步");
+//                                            button.setOnClickListener(new View.OnClickListener() {
+//                                                @Override
+//                                                public void onClick(View view) {
+//                                                    controller.showPage(1);
+//                                                }
+//                                            });
+//                                        }
+//                                    })
+//                        /*.setEnterAnimation(enterAnimation)//进入动画
+//                        .setExitAnimation(exitAnimation)//退出动画*/
+//                    )
+//                    .addGuidePage(GuidePage.newInstance()
+//                            .addHighLight(findViewById(R.id.iv_avatar), HighLight.Shape.RECTANGLE,
+//                                    new RelativeGuide(R.layout.newguide_relative, Gravity.RIGHT))
+//                            .setLayoutRes(R.layout.newguide_simple)
+//                            .setOnLayoutInflatedListener(new OnLayoutInflatedListener() {
+//                                @Override
+//                                public void onLayoutInflated(View view, final Controller controller) {
+//                                    Button button = view.findViewById(R.id.btn_next);
+//                                    button.setText("下一步");
+//                                    button.setOnClickListener(new View.OnClickListener() {
+//                                        @Override
+//                                        public void onClick(View view) {
+//                                            controller.showPage(2);
+//                                        }
+//                                    });
+//                                }
+//                            })
+//                    )
+//                    .addGuidePage(GuidePage.newInstance()
+//                            .addHighLight(findViewById(R.id.tv_name), HighLight.Shape.RECTANGLE,
+//                                    new RelativeGuide(R.layout.newguide_relative, Gravity.LEFT))
+//                            .setLayoutRes(R.layout.newguide_simple)
+//                            .setOnLayoutInflatedListener(new OnLayoutInflatedListener() {
+//                                @Override
+//                                public void onLayoutInflated(View view, final Controller controller) {
+//                                    Button button = view.findViewById(R.id.btn_next);
+//                                    button.setText("下一步");
+//                                    button.setOnClickListener(new View.OnClickListener() {
+//                                        @Override
+//                                        public void onClick(View view) {
+//                                            controller.showPage(3);
+//                                        }
+//                                    });
+//                                }
+//                            })
+//                    )
+//                    .addGuidePage(GuidePage.newInstance()
+//                            .addHighLight(findViewById(R.id.tv_sign_in), HighLight.Shape.RECTANGLE,
+//                                    new RelativeGuide(R.layout.newguide_relative, Gravity.LEFT))
+//                    )
+//                    .alwaysShow(true)
+//                    .show();
+//            SPUtils.getInstance().save(Global.SP_KEY.APP_FIRST_START, false);
+//        } else {
+//            //相当于onPause
+//        }
     }
 
 

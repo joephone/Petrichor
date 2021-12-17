@@ -121,7 +121,7 @@ public class LocationTask implements LocationSource,AMapLocationListener{
         //          location.getLongitude();//获取经度
         //          location.getAccuracy();//获取精度信息
         //          @SuppressLint("SimpleDateFormat")
-        //        SimpleDateFormat df = new   SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         //        Date date = new   Date(location.getTime());
         //          df.format(date);//定位时间
         //          location.getAddress();//地址，如果option中设置isNeedAddress为false，则没有此结果，网络定位结果中会有地址信息，GPS定位不返回地址信息。
