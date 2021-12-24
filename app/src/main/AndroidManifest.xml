@@ -45,12 +45,13 @@
         tools:ignore="LockedOrientationActivity"
         android:theme="@style/WanAppTheme">
 
-        <!--  android:theme="@style/splash" -->
+        <!--  android:theme="@style/splash"   android:name=".crash.CauseActivity" -->
         <activity
-            android:name=".ui.loc.activity.WeixinLocActivity"
+            android:name=".ui.main.activity.SplashActivity"
+
             android:screenOrientation="portrait"
-            android:launchMode="singleTask"
-           >
+            android:launchMode="singleTask" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -60,8 +61,7 @@
 
 
         <activity
-
-            android:name=".ui.main.activity.SplashActivity"
+            android:name=".ui.loc.activity.WeixinLocActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTask"/>
 
@@ -115,6 +115,20 @@
             android:screenOrientation="portrait"
             android:launchMode="singleTask"/>
 
+        <activity
+            android:name=".pic.activity.DragImageActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+
+        <activity
+            android:name=".crash.CrashActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+
+        <activity
+            android:name=".crash.RestartActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
 
         <!-- 高德地图  -->
         <meta-data

@@ -29,6 +29,7 @@ dependencies {
     implementation project(':basic_core')
     implementation project(':basic_res')
     implementation project(':basic_ui')
+    implementation project(':basic_utils')
 
     api config.dependencies.appcompatv7
     api config.dependencies.design

@@ -16,6 +16,7 @@ import com.transcendence.core.base.action.ActivityAction;
 import com.transcendence.core.base.action.BundleAction;
 import com.transcendence.core.base.action.ClickAction;
 import com.transcendence.core.base.action.KeyboardAction;
+import com.transcendence.core.base.component.ActivityCollector;
 import com.transcendence.core.statusbar.StatusBarUtil;
 import com.transcendence.core.utils.StatusBarUtils;
 
@@ -35,6 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Keyboard
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        StatusBarUtil.setStatusBarMode(this, false, R.color.colorGitHubBlack);
+        ActivityCollector.addActivity(this);
         mActivity = this;
         StatusBarUtils.with(mActivity).init();
         init();
@@ -106,4 +108,10 @@ public abstract class BaseActivity extends AppCompatActivity implements Keyboard
     }
 
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
 }

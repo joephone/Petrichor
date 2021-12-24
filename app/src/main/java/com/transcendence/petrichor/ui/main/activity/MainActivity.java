@@ -6,7 +6,6 @@ import android.widget.Toast;
 
 import androidx.viewpager.widget.ViewPager;
 
-import com.tbruyelle.rxpermissions3.RxPermissions;
 import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.core.permission.PermissionPool;
 import com.transcendence.petrichor.R;

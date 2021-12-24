@@ -9,7 +9,7 @@ package com.transcendence.core.global;
  */
 public class Global {
     public static final String TAG = "Petrichor";
-    public static boolean DEBUG = false;
+    public static boolean DEBUG = true;
     public final static int ANIM_DURATION_TIME = 10000;
 
 
@@ -56,7 +56,7 @@ public class Global {
 
 
 
-    public final class IntentKey {
+    public final class INTENT_KEY {
         // 常用相关
         /** id */
         public static final String ID = "id";
@@ -148,6 +148,9 @@ public class Global {
         public static final String ALI_PAY = "ali_pay";
         /** 银联支付 */
         public static final String UNION_PAY = "union_pay";
+        /** CrashHandler */
+        public static final String EXCEPTION_CRASH = "exceptionOfCrash";
+
     }
 
 }

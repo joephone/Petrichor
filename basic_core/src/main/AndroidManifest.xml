@@ -1,5 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.transcendence.core" >
+    package="com.transcendence.core">
+
+    <application>
+
+        <activity android:name=".crash.CrashActivity" />
+
+    </application>
 
 
 </manifest>

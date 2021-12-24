@@ -38,14 +38,14 @@
             android:background="@drawable/water_effect_github_black_selector"
             android:layout_weight="1"
             />
-<!--        <com.transcendence.core.widget.custom.TabView-->
-<!--            android:id="@+id/tabThree"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:background="@drawable/water_effect_github_black_selector"-->
-<!--            android:layout_weight="1"-->
-<!--            />-->
-<!--        <com.transcendence.core.widget.custom.TabView-->
+        <com.transcendence.ui.widget.custom.TabView
+            android:id="@+id/tabThree"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/water_effect_github_black_selector"
+            android:layout_weight="1"
+            />
+<!--        <com.transcendence.ui.widget.custom.TabView-->
 <!--            android:id="@+id/tabFour"-->
 <!--            android:layout_width="0dp"-->
 <!--            android:layout_height="match_parent"-->

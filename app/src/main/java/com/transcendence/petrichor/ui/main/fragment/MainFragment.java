@@ -10,6 +10,7 @@ import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.fragment.PetrichorBaseFragment;
 import com.transcendence.petrichor.ui.main.activity.MainActivity;
 import com.transcendence.petrichor.ui.mine.fragment.MineFragment;
+import com.transcendence.petrichor.ui.mine.fragment.UserFragment;
 import com.transcendence.ui.widget.custom.TabView;
 
 import java.util.ArrayList;
@@ -57,12 +58,12 @@ public class MainFragment extends PetrichorBaseFragment<MainActivity> implements
         mVpMain = (ViewPager) findViewById(R.id.vp);
         mTabOne = (TabView) findViewById(R.id.tabOne);
         mTabTwo = (TabView) findViewById(R.id.tabTwo);
-//        mTabThree = rootView.findViewById(R.id.tabThree);
+        mTabThree = (TabView)findViewById(R.id.tabThree);
 //        mTabFour = rootView.findViewById(R.id.tabFour);
 //        mTabFive = rootView.findViewById(R.id.tabFive);
         mTabOne.setOnClickListener(this);
         mTabTwo.setOnClickListener(this);
-//        mTabThree.setOnClickListener(this);
+        mTabThree.setOnClickListener(this);
 //        mTabFour.setOnClickListener(this);
     }
 
@@ -77,12 +78,13 @@ public class MainFragment extends PetrichorBaseFragment<MainActivity> implements
         mVpMain.setOffscreenPageLimit(4);
         adapter = new GoweiiFragmentPagerAdapter(getChildFragmentManager());
         adapter.setFragments(
-                HomeFragment.newInstance("主页面")
+                HomeFragment.newInstance("主页面"),
+                SmartRefreshFragment.newInstance("刷新"),
 //                , BeautyFragment.newInstance("福利社")
 //                , NewWxArticleListFragment.newInstance("")
-                , MineFragment.newInstance("我的"));
+                MineFragment.newInstance("我的"));
+//                UserFragment.newInstance("我的"));
         mVpMain.setAdapter(adapter);
-
 
         mVpMain.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             /**
@@ -115,12 +117,12 @@ public class MainFragment extends PetrichorBaseFragment<MainActivity> implements
 
     private void initTabs() {
         mTabOne.setIconAndText(R.drawable.ic_tab_home_white_24dp,R.drawable.ic_tab_home_github_green_24dp,getContext().getString(R.string.tab_home));
-        mTabTwo.setIconAndText(R.drawable.ic_tab_person_white_24dp, R.drawable.ic_tab_person_githubgreen_24dp, getContext().getString(R.string.tab_me));
+        mTabTwo.setIconAndText(R.drawable.ic_tab_wx_public_white_24dp,R.drawable.ic_tab_wx_public_githubgreen_24dp,getContext().getString(R.string.tab_hierarchy));
 //        mTabThree.setIconAndText(R.drawable.ic_tab_wx_public_white_24dp,R.drawable.ic_tab_wx_public_githubgreen_24dp,getContext().getString(R.string.wan_tab_three));
-//        mTabFour.setIconAndText(R.drawable.ic_bottom_bar_project,R.mipmap.ic_navi_contacts_press,StringUtils.getString(R.string.wan_tab_four));
+        mTabThree.setIconAndText(R.drawable.ic_tab_person_white_24dp, R.drawable.ic_tab_person_githubgreen_24dp, getContext().getString(R.string.tab_me));
 //        mTabFour.setIconAndText(R.drawable.ic_tab_person_white_24dp,R.drawable.ic_tab_person_githubgreen_24dp,getContext().getString(R.string.wan_tab_five));
-        mTabs.add(mTabOne);mTabs.add(mTabTwo);
-//        mTabs.add(mTabThree);mTabs.add(mTabFour);  mTabs.add(mTabFive);
+        mTabs.add(mTabOne);mTabs.add(mTabTwo);mTabs.add(mTabThree);
+//        mTabs.add(mTabFour);  mTabs.add(mTabFive);
         setCurrentTabs(0);
     }
 
@@ -144,17 +146,9 @@ public class MainFragment extends PetrichorBaseFragment<MainActivity> implements
             case R.id.tabTwo:
                 setCurrentTabs(1);
                 break;
+            case R.id.tabThree:
+                setCurrentTabs(2);
+                break;
         }
-//        int i = v.getId();
-//        if (i == R.id.tabOne) {
-//            setCurrentTabs(0);
-//        }
-//        else if (i == R.id.tabTwo) {
-//            setCurrentTabs(1);
-//        } else if (i == R.id.tabThree) {
-//            setCurrentTabs(2);
-//        } else if (i == R.id.tabFour) {
-//            setCurrentTabs(3);
-//        }
     }
 }

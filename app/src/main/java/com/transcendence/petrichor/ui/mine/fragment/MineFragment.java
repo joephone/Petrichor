@@ -15,6 +15,7 @@ import com.transcendence.core.global.Global;
 import com.transcendence.core.utils.SPUtils;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.fragment.PetrichorBaseFragment;
+import com.transcendence.petrichor.pic.activity.DragImageActivity;
 import com.transcendence.petrichor.ui.mine.activity.LoginActivity;
 import com.transcendence.petrichor.ui.main.activity.MainActivity;
 import com.transcendence.petrichor.ui.mine.activity.LuckyPanelActivity;
@@ -27,6 +28,8 @@ import com.transcendence.ui.newguide.model.GuidePage;
 import com.transcendence.ui.newguide.model.HighLight;
 import com.transcendence.ui.newguide.model.RelativeGuide;
 import com.transcendence.ui.scroll.HeaderZoomLayout;
+
+import java.util.ArrayList;
 
 /**
  * @Author Joephone on 2021/12/3 0003 下午 4:01
@@ -180,13 +183,17 @@ public class MineFragment extends PetrichorBaseFragment<MainActivity> implements
             case R.id.tv_sign_in:
                 LuckyPanelActivity.start(getActivity());
                 break;
+            case R.id.iv_avatar:
+                DragImageActivity.start(getActivity());
+                break;
         }
     }
 
+    ArrayList<String> list;
     @Override
     public void onScroll(int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
         if (Math.abs(scrollY - oldScrollY) > 50) {
-
+            int size = list.size();
         }
     }
 

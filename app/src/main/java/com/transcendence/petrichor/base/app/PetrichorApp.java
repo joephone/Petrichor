@@ -17,6 +17,7 @@ import com.hjq.toast.style.ToastBlackStyle;
 import com.transcendence.core.base.app.LibApplication;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.manager.ActivityManager;
+import com.transcendence.petrichor.crash.CrashHandler;
 
 /**
  * @Author Joephone on 2021/12/1 0001 下午 4:26
@@ -30,6 +31,7 @@ public final class PetrichorApp extends LibApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+
 
         init(this);
     }
@@ -66,5 +68,7 @@ public final class PetrichorApp extends LibApplication {
                 }
             });
         }
+
+        CrashHandler.register(application);
     }
 }
