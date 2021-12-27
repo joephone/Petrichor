@@ -39,7 +39,7 @@ public class MainActivity extends PetrichorBaseActivity {
     @Override
     protected void initData() {
         rxPermissions
-                .request(PermissionPool.MANAGE_EXTERNAL_STORAGE)
+                .request(PermissionPool.GROUP.PETRICHOR)
                 .subscribe(granted -> {
                     if (granted) { // Always true pre-M
                         // I can control the camera now

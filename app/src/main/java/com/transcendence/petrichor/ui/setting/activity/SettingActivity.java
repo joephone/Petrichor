@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.activity.PetrichorBaseActivity;
+import com.transcendence.petrichor.dialog.UpdateDialog;
 
 /**
  * @Author Joephone on 2021/12/9 0009 下午 3:54
@@ -30,7 +31,7 @@ public class SettingActivity extends PetrichorBaseActivity {
     @Override
     protected void initView() {
         setTitle(getString(R.string.setting));
-
+        setBackVisibility();
         tvCache = findViewById(R.id.tv_cache);
         llLanguage = findViewById(R.id.ll_language);
         llLanguage.setOnClickListener(this);
@@ -60,25 +61,22 @@ public class SettingActivity extends PetrichorBaseActivity {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-//            case R.id.fl_right:
-//
-//                break;
             case R.id.ll_language:
                 LanguageActivity.start(getContext());
                 break;
             case R.id.ll_check_update:
-//                new UpdateDialog.Builder(mActivity)
-//                        // 版本名
-//                        .setVersionName("1.0.0")
-//                        // 是否强制更新
-//                        .setForceUpdate(false)
-//                        // 更新日志
-//                        .setUpdateLog("到底更新了啥\n到底更新了啥\n到底更新了啥\n到底更新了啥\n到底更新了啥")
-//                        // 下载 URL
-//                        .setDownloadUrl("https://dldir1.qq.com/weixin/android/weixin7014android1660.apk")
-//                        // 文件 MD5
+                new UpdateDialog.Builder(mActivity)
+                        // 版本名
+                        .setVersionName("1.0.0")
+                        // 是否强制更新
+                        .setForceUpdate(false)
+                        // 更新日志
+                        .setUpdateLog("到底更新了啥\n到底更新了啥\n到底更新了啥\n到底更新了啥\n到底更新了啥")
+                        // 下载 URL
+                        .setDownloadUrl("https://dldir1.qq.com/weixin/android/weixin7014android1660.apk")
+                        // 文件 MD5
 //                        .setFileMd5(Global.MD5_MAP)
-//                        .show();
+                        .show();
                 break;
             case R.id.ll_cache:
 //                presenter.clearCache();
@@ -87,11 +85,7 @@ public class SettingActivity extends PetrichorBaseActivity {
                 MultiSettingActivity.start(getContext());
                 break;
             case R.id.ll_logout:
-//                if(UserUtils.getInstance().toDoIfLogin(getContext())){
-//                    presenter.logout();
-//                }else {
-//                    L.d("未登录");
-//                }
+
                 break;
         }
     }

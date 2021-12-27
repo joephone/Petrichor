@@ -62,15 +62,15 @@ ext {
             constraintLayout                : "com.android.support.constraint:constraint-layout:$version.constraintLayout",
             supportv4                       : "com.android.support:support-v4:$version.supportSdkVersion",
 
-
             gson                            : "com.google.code.gson:gson:$version.gson",
             eventbus                        : "org.greenrobot:eventbus:$version.eventbus",
-
 
             // ui
             "SmartRefreshLayout"           : "com.scwang.smartrefresh:SmartRefreshLayout:$version.smartRefreshLayout",
             "SmartRefreshHeader"           : "com.scwang.smartrefresh:SmartRefreshHeader:$version.smartRefreshLayout",
             "banner"                       : "com.youth.banner:banner:1.4.10",
+
+            okhttp                          : "com.squareup.okhttp3:okhttp:$version.okhttp",
     ]
 
 

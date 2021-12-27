@@ -189,11 +189,10 @@ public class MineFragment extends PetrichorBaseFragment<MainActivity> implements
         }
     }
 
-    ArrayList<String> list;
     @Override
     public void onScroll(int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
         if (Math.abs(scrollY - oldScrollY) > 50) {
-            int size = list.size();
+
         }
     }
 

@@ -10,6 +10,13 @@
     <color name="theme_tudor_white">#FFFFF0</color>
     <color name="main">@color/theme_tudor_red</color>
 
+
+    <!-- github -->
+    <color name="colorGitHubBlack">#24292E</color>
+    <color name="colorGitHubBlackPress">#6a737d</color>
+    <color name="colorGitHubGreen">#31C754</color>
+    <color name="colorGitHubGreenPress">#208738</color>
+
     <!-- 元色 -->
     <color name="transparent">#00000000</color>
     <!--白色透明度-->
@@ -89,22 +96,10 @@
     <color name="text_black">#333333</color>
 
 
-    <color name="text_main">@color/colorTheme</color>
-    <color name="text_surface">#333333</color>
-    <color name="text_surface_alpha">#88333333</color>
-    <color name="text_second">#666666</color>
-    <color name="text_third">#999999</color>
-    <color name="text_fourth">#cccccc</color>
-    <color name="text_invert">#ffffff</color>
-    <color name="text_invert_alpha">#88ffffff</color>
-    <color name="text_on_main">#ffffff</color>
-    <dimen name="text_headline">22sp</dimen>
-    <dimen name="text_title">18sp</dimen>
-    <dimen name="text_subtitle">17sp</dimen>
-    <dimen name="text_content">15sp</dimen>
-    <dimen name="text_auxiliary">13sp</dimen>
-    <dimen name="text_notes">12sp</dimen>
-    <dimen name="text_time">11sp</dimen>
+
+    <!--surface颜色-->
+    <color name="title_dialog_theme">@color/colorGitHubBlack</color>
+
 
     <!--surface颜色-->
     <color name="surface">#ffffff</color>
@@ -133,11 +128,7 @@
     <color name="colorYellow">#feef50</color>
     <color name="avatarGray">#b2525252</color>
 
-    <!-- github -->
-    <color name="colorGitHubBlack">#24292E</color>
-    <color name="colorGitHubBlackPress">#6a737d</color>
-    <color name="colorGitHubGreen">#31C754</color>
-    <color name="colorGitHubGreenPress">#208738</color>
+
 
 
     <!-- Weixin -->

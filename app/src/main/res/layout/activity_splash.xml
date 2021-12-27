@@ -10,15 +10,6 @@
     android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/tv_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textColor="@color/text_99"
-        android:textSize="20sp"
-        android:textStyle="bold|italic"
-        tools:text="@string/app_name" />
 
 
     <ImageView
@@ -38,9 +29,21 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/bg_count_down_kugoo_style"
         android:gravity="center"
-        android:text="跳过"
+        android:text="@string/skip"
         android:textColor="@color/white"
         android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="@dimen/standard_padding"
+        android:textColor="@color/text_33"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:text="@string/app_name" />
+
 
 
 </RelativeLayout>

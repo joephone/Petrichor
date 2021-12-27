@@ -16,6 +16,8 @@ dependencies {
     api config.dependencies.supportv4
     api config.dependencies.constraintLayout
 
+    api config.dependencies.okhttp
+
     implementation 'com.github.joephone:jLog:v1.0.2'
     //状态栏
     implementation 'com.readystatesoftware.systembartint:systembartint:1.0.3'

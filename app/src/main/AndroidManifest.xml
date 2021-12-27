@@ -48,7 +48,6 @@
         <!--  android:theme="@style/splash"   android:name=".crash.CauseActivity" -->
         <activity
             android:name=".ui.main.activity.SplashActivity"
-
             android:screenOrientation="portrait"
             android:launchMode="singleTask" >
 

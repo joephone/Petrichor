@@ -1,6 +1,7 @@
 package com.transcendence.petrichor.ui.setting.adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.transcendence.core.global.Global;
 import com.transcendence.core.utils.L;
+import com.transcendence.core.utils.SPUtils;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.ui.setting.bean.LanguageBean;
 
@@ -29,6 +32,16 @@ public class LanguageSetAdapter extends RecyclerView.Adapter<LanguageSetAdapter.
     public LanguageSetAdapter(Context context, List<LanguageBean> data) {
         mContext = context;
         sourceList = data;
+        String strLan = SPUtils.getInstance().getString(Global.SP_KEY.LOCALE_LANGUAGE);
+        L.d(strLan);
+        if(!TextUtils.isEmpty(strLan)){
+            for (int i = 0; i < sourceList.size(); i++) {
+                String temp = sourceList.get(i).getLocale().getLanguage();
+                if(temp.equals(strLan)){
+                    mSelectPos = i;
+                }
+            }
+        }
     }
 
     @NonNull
@@ -44,7 +57,7 @@ public class LanguageSetAdapter extends RecyclerView.Adapter<LanguageSetAdapter.
         if (viewHolder instanceof LanguageSetViewHolder) {
             LanguageSetViewHolder holder = viewHolder;
             holder.tvLanguage.setText(sourceList.get(position).getDesc());
-            if (mSelectPos == holder.getAdapterPosition() && mIsClick) {
+            if (mSelectPos == holder.getAdapterPosition() ) {
                 holder.iv.setVisibility(View.VISIBLE);
             } else {
                 holder.iv.setVisibility(View.INVISIBLE);
@@ -68,24 +81,10 @@ public class LanguageSetAdapter extends RecyclerView.Adapter<LanguageSetAdapter.
         return sourceList == null ? 0 : sourceList.size();
     }
 
-    //底部上拉刷新，数据直接在底部显示
-    public void loadMore(List<LanguageBean> data) {
-        sourceList.addAll(data);
-        notifyDataSetChanged();
-    }
-
-    //底部下拉刷新，数据直接从上往下添加数据，显示在顶部
-    public void refreshData(List<LanguageBean> data) {
-        sourceList.addAll(0, data);
-        notifyDataSetChanged();
-//            notifyItemInserted(0); 一次只能加一项数据
-    }
-
     public void setSelectPos(int selectPos, boolean isClick) {
         this.mSelectPos = selectPos;
         this.mIsClick = isClick;
     }
-
 
     public class LanguageSetViewHolder extends RecyclerView.ViewHolder {
         ImageView iv;
@@ -104,5 +103,19 @@ public class LanguageSetAdapter extends RecyclerView.Adapter<LanguageSetAdapter.
 
     public void setListener(LanguageSetAdapterOnClick listener) {
         this.listener = listener;
+    }
+
+
+    //底部上拉刷新，数据直接在底部显示
+    public void loadMore(List<LanguageBean> data) {
+        sourceList.addAll(data);
+        notifyDataSetChanged();
+    }
+
+    //底部下拉刷新，数据直接从上往下添加数据，显示在顶部
+    public void refreshData(List<LanguageBean> data) {
+        sourceList.addAll(0, data);
+        notifyDataSetChanged();
+//            notifyItemInserted(0); 一次只能加一项数据
     }
 }

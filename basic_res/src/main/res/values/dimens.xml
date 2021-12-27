@@ -28,7 +28,26 @@
 
     <dimen name="height_standard_layout">50dp</dimen>
 
+    <dimen name="title_height">50dp</dimen>
+    <dimen name="title_update_height">70dp</dimen>
 
+    <!-- text -->
+    <color name="text_main">@color/colorTheme</color>
+    <color name="text_surface">#333333</color>
+    <color name="text_surface_alpha">#88333333</color>
+    <color name="text_second">#666666</color>
+    <color name="text_third">#999999</color>
+    <color name="text_fourth">#cccccc</color>
+    <color name="text_invert">#ffffff</color>
+    <color name="text_invert_alpha">#88ffffff</color>
+    <color name="text_on_main">#ffffff</color>
+    <dimen name="text_headline">22sp</dimen>
+    <dimen name="text_title">18sp</dimen>
+    <dimen name="text_subtitle">17sp</dimen>
+    <dimen name="text_content">15sp</dimen>
+    <dimen name="text_auxiliary">13sp</dimen>
+    <dimen name="text_notes">12sp</dimen>
+    <dimen name="text_time">11sp</dimen>
 
     <!-- 通用 -->
     <dimen name="size_8">8sp</dimen>

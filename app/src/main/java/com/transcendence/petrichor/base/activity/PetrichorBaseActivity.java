@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -51,55 +52,15 @@ public abstract class PetrichorBaseActivity extends BaseActivity
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EventBus.getDefault().register(this);
-//        Activity activity = getActivity();
-//        if(!(activity instanceof SplashActivity)){
-//            changeAppLanguage();
-//        }
+        changeAppLanguage();
     }
 
-    @Override
-    public void finish() {
-        super.finish();
-        overridePendingTransition(R.anim.left_in_activity, R.anim.left_out_activity);
-    }
-
-    protected void setTitle(String title) {
-        ((TextView) findViewById(R.id.tv_title)).setText(title);
-        setBackVisibility();
-    }
-
-    protected void setBackVisibility() {
-        FrameLayout fl_back = findViewById(R.id.fl_back);
-        if (isBackVisible) {
-            fl_back.setVisibility(View.VISIBLE);
-            fl_back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    clickBack(view);
-                }
-            });
-        } else {
-            fl_back.setVisibility(View.INVISIBLE);
-        }
-    }
-
-    private void clickBack(View view) {
-        finish();
-    }
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEvent(String str) {
-        switch (str) {
-            case Global.EVENT_BUS.LANGUAGE_CONFIG_CHANGE:
-//                changeAppLanguage();
-//                recreate();//刷新界面
-                break;
-        }
-    }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventMainThread(LanguageEvent event) {
         changeAppLanguage();
+        recreate();//刷新界面
+//        reStart();
     }
 
     public void changeAppLanguage() {
@@ -114,12 +75,53 @@ public abstract class PetrichorBaseActivity extends BaseActivity
             conf.locale = myLocale;
             res.updateConfiguration(conf, dm);
         }
-        recreate();//刷新界面
+    }
+
+
+    private void reStart(){
+        //重启app,这一步一定要加上，如果不重启app，可能打开新的页面显示的语言会不正确
+        Intent intent = new Intent(mActivity, SplashActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        android.os.Process.killProcess(android.os.Process.myPid());
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+    }
+
+
+    private void clickBack(View view) {
+        finish();
+    }
+
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.left_in_activity, R.anim.left_out_activity);
+    }
+
+    protected void setTitle(String title) {
+        ((TextView) findViewById(R.id.tv_title)).setText(title);
+        setBackVisibility();
+    }
+
+    protected void setBackVisibility() {
+        FrameLayout fl_back = findViewById(R.id.fl_back);
+        ImageView iv_left = findViewById(R.id.iv_left);
+        if (isBackVisible) {
+            iv_left.setVisibility(View.VISIBLE);
+            fl_back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickBack(view);
+                }
+            });
+        } else {
+            fl_back.setVisibility(View.INVISIBLE);
+        }
     }
 }

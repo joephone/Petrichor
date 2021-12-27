@@ -42,28 +42,14 @@ public class SplashActivity extends PetrichorBaseActivity implements View.OnClic
         mTvSkip = findViewById(R.id.tv_skip);
         mTvSkip.setOnClickListener(this);
         mTvSkip.setDuration(Global.ANIM_DURATION_TIME);
-//        int[] ids = Global.mLauncherIds;
-//        int index = new Random().nextInt(ids.length);
-//        GlideUtils.getInstance().loadImageFromLocal(ids[index], ivLauncher);
-//        GlideUtils.showImageView(mActivity,R.drawable.img_default_book,ids[index],ivLauncher);
-//        initStartAnim();
-        countDown();
-        mTvSkip.start();
+
     }
 
 
     @Override
     protected void initData() {
-        rxPermissions
-                .request(PermissionPool.GROUP.PETRICHOR)
-                .subscribe(granted -> {
-                    if (granted) { // Always true pre-M
-                        // I can control the camera now
-                        startMain();
-                    } else {
-                        // Oups permission denied
-                    }
-                });
+        countDown();
+        mTvSkip.start();
     }
 
     public void countDown() {
