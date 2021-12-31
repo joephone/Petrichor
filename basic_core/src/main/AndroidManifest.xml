@@ -3,7 +3,17 @@
 
     <application>
 
-        <activity android:name=".crash.CrashActivity" />
+        <service android:name="com.transcendence.core.updater.service.DownloadService"/>
+
+        <provider
+            android:name="com.transcendence.core.updater.provider.AppUpdaterFileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/app_updater_paths"/>
+        </provider>
 
     </application>
 

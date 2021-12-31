@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">初雨的气息</string>
+    <string name="app_name">定制开发</string>
 
     <string name="navigation_drawer_open">Open drawer</string>
     <string name="navigation_drawer_close">Close drawer</string>
@@ -7,6 +7,7 @@
     <string name="request_fail">请求失败</string>
     <string name="exit_app">退出应用</string>
     <string name="private_policy">隐私政策</string>
+    <string name="public_notice">公告</string>
     <string name="crash_restart">运行意外，正在重新启动</string>
     <!-- common -->
     <string name="exit">退出</string>
@@ -24,6 +25,7 @@
     <string name="edit">编辑</string>
     <string name="tip">提示</string>
     <string name="skip">跳过</string>
+    <string name="pay">支付</string>
     <!-- tab -->
     <string name="tab_home">首页</string>
     <string name="tab_hierarchy">体系</string>
@@ -75,12 +77,16 @@
     <string name="lan_en">英文</string>
     <string name="lan_ja">日文</string>
     <string name="lan_de">德文</string>
+    <string name="lan_change_confirm">确定更改吗？</string>
     <!-- lucky panel -->
     <string name="lucky_panel_title">Wheel of Fortune</string>
     <string name="lucky_panel_times_left">times left</string>
     <string name="lucky_panel_fortune_list">Check out your fortune list</string>
     <!-- network -->
     <string name="common_network_error">当前网络不可用，请检查网络设置</string>
+    <string name="status_layout_no_data">空空如也</string>
+    <string name="status_layout_error_request">请求出错，点击重试</string>
+    <string name="status_layout_error_network">网络错误，点击重试</string>
     <!-- update -->
     <string name="update_title">发现新版本</string>
     <string name="update_content">更新内容</string>
@@ -96,5 +102,8 @@
     <!-- update end  -->
     <!-- other -->
     <string name="viewpager_indicator">%1$d/%2$d</string>
+    <string name="privacy_check_android_edition">本应用为高版本Android设备打造\n感谢您的使用！</string>
+    <string name="about">关于我</string>
+    <string name="about_author"><font color="#85b84f">Android</font>Joephone</string>
     <string name="copy_right" translatable="false">Copyrights © 2021</string>
 </resources>

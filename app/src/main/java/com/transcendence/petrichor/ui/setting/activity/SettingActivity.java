@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.trancesdence.utils.AppUtils;
+import com.transcendence.core.permission.PermissionPool;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.activity.PetrichorBaseActivity;
 import com.transcendence.petrichor.dialog.UpdateDialog;
@@ -19,9 +21,8 @@ import com.transcendence.petrichor.dialog.UpdateDialog;
  */
 public class SettingActivity extends PetrichorBaseActivity {
 
-
     TextView tvCache;
-    private LinearLayout llLanguage,llCheckUpdate,llCache,llMulti,llLogout;
+    private LinearLayout llLogout;
 
     @Override
     protected int getLayoutId() {
@@ -33,14 +34,10 @@ public class SettingActivity extends PetrichorBaseActivity {
         setTitle(getString(R.string.setting));
         setBackVisibility();
         tvCache = findViewById(R.id.tv_cache);
-        llLanguage = findViewById(R.id.ll_language);
-        llLanguage.setOnClickListener(this);
-        llCheckUpdate = findViewById(R.id.ll_check_update);
-        llCheckUpdate.setOnClickListener(this);
-        llCache = findViewById(R.id.ll_cache);
-        llCache.setOnClickListener(this);
-        llMulti = findViewById(R.id.ll_multi);
-        llMulti.setOnClickListener(this);
+        findViewById(R.id.ll_language).setOnClickListener(this);
+        findViewById(R.id.ll_check_update).setOnClickListener(this);
+        findViewById(R.id.ll_cache).setOnClickListener(this);
+        findViewById(R.id.ll_multi).setOnClickListener(this);
         llLogout = findViewById(R.id.ll_logout);
         llLogout.setOnClickListener(this);
 //        if(!UserUtils.getInstance().isLogin()){
@@ -65,18 +62,29 @@ public class SettingActivity extends PetrichorBaseActivity {
                 LanguageActivity.start(getContext());
                 break;
             case R.id.ll_check_update:
-                new UpdateDialog.Builder(mActivity)
-                        // 版本名
-                        .setVersionName("1.0.0")
-                        // 是否强制更新
-                        .setForceUpdate(false)
-                        // 更新日志
-                        .setUpdateLog("到底更新了啥\n到底更新了啥\n到底更新了啥\n到底更新了啥\n到底更新了啥")
-                        // 下载 URL
-                        .setDownloadUrl("https://dldir1.qq.com/weixin/android/weixin7014android1660.apk")
-                        // 文件 MD5
+                rxPermissions
+                        .request(PermissionPool.WRITE_EXTERNAL_STORAGE)
+                        .subscribe(granted -> {
+                            if (granted) { // Always true pre-M
+                                // I can control the camera now
+                                // 升级对话框
+                                new UpdateDialog.Builder(mActivity)
+                                        // 版本名
+                                        .setVersionName(AppUtils.getVersionName(mActivity))
+                                        // 是否强制更新
+                                        .setForceUpdate(false)
+                                        // 更新日志
+                                        .setUpdateLog("到底更新了啥\n到底更新了啥\n到底更新了啥\n到底更新了啥\n到底更新了啥")
+                                        // 下载 URL
+                                        .setDownloadUrl("https://dldir1.qq.com/weixin/android/weixin7014android1660.apk")
+                                        // 文件 MD5
 //                        .setFileMd5(Global.MD5_MAP)
-                        .show();
+                                        .show();
+                            } else {
+                                // Oups permission denied
+                            }
+                        });
+
                 break;
             case R.id.ll_cache:
 //                presenter.clearCache();

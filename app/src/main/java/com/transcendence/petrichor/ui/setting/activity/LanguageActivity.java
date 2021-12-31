@@ -72,7 +72,7 @@ public class LanguageActivity extends PetrichorBaseActivity implements LanguageS
         new DialogMessage.Builder(mActivity)
                 .setTitle(R.string.tip)
                 // 内容必须要填写
-                .setMessage("确定更改吗？")
+                .setMessage(R.string.lan_change_confirm)
                 .setConfirm(getString(R.string.ok))
                 // 设置 null 表示不显示取消按钮
                 .setCancel(getString(R.string.cancel))
@@ -82,7 +82,6 @@ public class LanguageActivity extends PetrichorBaseActivity implements LanguageS
 
                     @Override
                     public void onConfirm(BaseDialog dialog) {
-
                         mAdapter.setSelectPos(position,isClick);   //Global.EVENT_BUS.LANGUAGE_CONFIG_CHANGE
                         SPUtils.getInstance().put(Global.SP_KEY.LOCALE_LANGUAGE,bean.getLocale().getLanguage());
                         EventBus.getDefault().post(new LanguageEvent(bean.getLocale()));
@@ -94,9 +93,6 @@ public class LanguageActivity extends PetrichorBaseActivity implements LanguageS
                     }
                 })
                 .show();
-
-
-
     }
 
 }

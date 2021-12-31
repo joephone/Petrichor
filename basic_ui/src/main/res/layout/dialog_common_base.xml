@@ -10,7 +10,6 @@
 
     <!--    app:cardBackgroundColor="@color/bg_dialog_ais_basic" -->
 
-
     <LinearLayout
         android:id="@+id/ll_ui_container"
         android:layout_width="match_parent"
@@ -63,13 +62,6 @@
                     android:text="@string/cancel"
                     android:textColor="@color/title_dialog_theme"
                     android:textSize="@dimen/text_subtitle" />
-
-                <!--            <View-->
-                <!--                android:id="@+id/v_ui_line"-->
-                <!--                android:layout_width="@dimen/line_size"-->
-                <!--                android:layout_height="match_parent"-->
-                <!--                android:visibility="gone"-->
-                <!--                android:background="@color/line" />-->
 
                 <TextView
                     android:id="@+id/tv_ui_confirm"

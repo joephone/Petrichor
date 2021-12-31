@@ -12,20 +12,16 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 
-import com.gyf.immersionbar.ImmersionBar;
-import com.hjq.bar.TitleBar;
 import com.tbruyelle.rxpermissions3.RxPermissions;
 import com.transcendence.core.base.BaseActivity;
 import com.transcendence.core.global.Global;
 import com.transcendence.core.utils.L;
 import com.transcendence.core.utils.SPUtils;
 import com.transcendence.petrichor.R;
-import com.transcendence.petrichor.base.action.TitleBarAction;
 import com.transcendence.petrichor.base.action.ToastAction;
+import com.transcendence.petrichor.ui.main.activity.MainActivity;
 import com.transcendence.petrichor.ui.main.activity.SplashActivity;
 import com.transcendence.petrichor.ui.setting.eventbus.LanguageEvent;
 
@@ -77,10 +73,9 @@ public abstract class PetrichorBaseActivity extends BaseActivity
         }
     }
 
-
     private void reStart(){
         //重启app,这一步一定要加上，如果不重启app，可能打开新的页面显示的语言会不正确
-        Intent intent = new Intent(mActivity, SplashActivity.class);
+        Intent intent = new Intent(mActivity, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         android.os.Process.killProcess(android.os.Process.myPid());
@@ -91,7 +86,6 @@ public abstract class PetrichorBaseActivity extends BaseActivity
         super.onDestroy();
         EventBus.getDefault().unregister(this);
     }
-
 
     private void clickBack(View view) {
         finish();
@@ -113,6 +107,7 @@ public abstract class PetrichorBaseActivity extends BaseActivity
         FrameLayout fl_back = findViewById(R.id.fl_back);
         ImageView iv_left = findViewById(R.id.iv_left);
         if (isBackVisible) {
+            fl_back.setVisibility(View.VISIBLE);
             iv_left.setVisibility(View.VISIBLE);
             fl_back.setOnClickListener(new View.OnClickListener() {
                 @Override

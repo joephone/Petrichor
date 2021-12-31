@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.Process;
 
 
 import java.util.Collections;
@@ -115,6 +116,7 @@ public class LibApplication extends Application {
 
     public static void exitApp() {
         finishAllActivity();
+        killProcess();
     }
 
     /**
@@ -133,5 +135,7 @@ public class LibApplication extends Application {
         activities.clear();
     }
 
-
+    public static void killProcess() {
+        Process.killProcess(Process.myPid());
+    }
 }

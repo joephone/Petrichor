@@ -93,7 +93,8 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="3dp"
                 android:indeterminate="false"
-                android:visibility="gone"
+                android:indeterminateTint="@color/colorGitHubBlack"
+                android:indeterminateTintMode="src_atop"
                 tools:progress="50"
                 tools:visibility="visible" />
 

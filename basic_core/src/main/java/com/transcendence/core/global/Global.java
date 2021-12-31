@@ -11,6 +11,7 @@ public class Global {
     public static final String TAG = "Petrichor";
     public static boolean DEBUG = true;
     public final static int ANIM_DURATION_TIME = 10000;
+    public static String GITHUB_AUTHOR_MAIN_PROJECT = "https://github.com/joephone/Petrichor";
 
 
     public static final class Bugly {
@@ -54,6 +55,15 @@ public class Global {
         public static final String LANGUAGE_CONFIG_CHANGE = "language_config_change";
     }
 
+    public final class BROADCAST_KEY {
+        public static final String LOCATION  = "location";
+        public static final String SYNC  = "sync";
+        public static final String FINISH_ACTIVITY  = "finishActivity";
+        public static final String WX_PAY_RESULT  = "wxPayResult";
+        public static final String SYNC_ERROR  = "sync_error";
+        public static final String USER_INVALIDATE  = "userInvalidate";
+        public static final String EXIT_APP  = "exitApp";
+    }
 
 
     public final class INTENT_KEY {

@@ -1,7 +1,10 @@
 package com.transcendence.petrichor.dialog;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -11,6 +14,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.core.app.NotificationCompat;
 import androidx.core.content.FileProvider;
 
 
@@ -20,6 +24,7 @@ import com.transcendence.core.updater.UpdateConfig;
 import com.transcendence.core.updater.callback.UpdateCallback;
 import com.transcendence.core.updater.http.OkHttpManager;
 import com.transcendence.petrichor.R;
+import com.transcendence.ui.utils.L;
 
 import java.io.File;
 
@@ -119,6 +124,7 @@ public final class UpdateDialog {
             if (view == mCloseView) {
                 dismiss();
             } else if (view == mUpdateView) {
+                L.d("mUpdateView");
                 // 判断下载状态
                 if (mDownloadComplete) {
                     if (mApkFile.isFile()) {
@@ -131,6 +137,7 @@ public final class UpdateDialog {
                         downloadApk();
                     }
                 } else if (!mDownloading) {
+                    L.d("!mDownloading");
                     // 没有下载，开启下载
                     downloadApk();
                 }
@@ -149,9 +156,9 @@ public final class UpdateDialog {
 //            NotificationManager notificationManager = getSystemService(NotificationManager.class);
 //            int notificationId = getContext().getApplicationInfo().uid;
 //            String channelId = "";
-            // 适配 Android 8.0 通知渠道新特性
+//            // 适配 Android 8.0 通知渠道新特性
 //            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                NotificationChannel channel = new NotificationChannel(getString(R.string.update_notification_channel_id), getString(R.string.update_notification_channel_name), NotificationManager.IMPORTANCE_LOW);
+//                NotificationChannel channel = new NotificationChannel("update_notification_channel_id","update_notification_channel_name", NotificationManager.IMPORTANCE_LOW);
 //                channel.enableLights(false);
 //                channel.enableVibration(false);
 //                channel.setVibrationPattern(new long[]{0});
@@ -166,9 +173,9 @@ public final class UpdateDialog {
 //                    // 设置通知标题
 //                    .setContentTitle(getString(R.string.app_name))
 //                    // 设置通知小图标
-//                    .setSmallIcon(R.mipmap.launcher_ic)
+//                    .setSmallIcon(R.mipmap.ic_petrichor)
 //                    // 设置通知大图标
-//                    .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.launcher_ic))
+//                    .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_petrichor))
 //                    // 设置通知静音
 //                    .setDefaults(NotificationCompat.FLAG_ONLY_ALERT_ONCE)
 //                    // 设置震动频率
@@ -183,8 +190,6 @@ public final class UpdateDialog {
                     getString(R.string.app_name) + "_v" + mNameView.getText().toString() + ".apk");
 
 
-
-
             UpdateConfig config = new UpdateConfig();
             config.setUrl(mDownloadUrl);
             AppUpdater mAppUpdater = new AppUpdater(LibApplication.getAppContext(),config)
@@ -194,12 +199,13 @@ public final class UpdateDialog {
                         @Override
                         public void onDownloading(boolean isDownloading) {
                             if(isDownloading){
-//                                showToast("已经在下载中,请勿重复下载。");
+                                L.d("已经在下载中,请勿重复下载。");
                             }
                         }
 
                         @Override
                         public void onStart(String url) {
+                            L.d("Progress onStart");
                             mProgressView.setProgress(0);
                             Message msg = new Message();
                             msg.what = PRO_VISIBLE;
@@ -209,6 +215,7 @@ public final class UpdateDialog {
 
                         @Override
                         public void onProgress(long progress, long total, boolean isChange) {
+                            L.d("onProgress");
                             if(isChange){
                                 int currProgress = Math.round(progress * 1.0f / total * 100.0f);
                                 mProgressView.setProgress(currProgress);
@@ -217,6 +224,7 @@ public final class UpdateDialog {
 
                         @Override
                         public void onFinish(File file) {
+                            L.d("onFinish");
                             Message msg = new Message();
                             msg.what = PRO_FINISH;
                             handler.sendMessage(msg);
@@ -224,6 +232,7 @@ public final class UpdateDialog {
 
                         @Override
                         public void onError(Exception e) {
+                            L.d("onError");
                             Message msg = new Message();
                             msg.what = PRO_INVISIBLE;
                             handler.sendMessage(msg);
@@ -231,6 +240,7 @@ public final class UpdateDialog {
 
                         @Override
                         public void onCancel() {
+                            L.d("onCancel");
                             Message msg = new Message();
                             msg.what = PRO_INVISIBLE;
                             handler.sendMessage(msg);

@@ -69,6 +69,8 @@
     <color name="orange">#ff7116</color>
     <color name="line">#d1d1d1</color>
     <color name="green">#13de64</color>
+    <!-- 桃色 -->
+    <color name="gold">#FFD700</color>
 
     <!-- 分割线的颜色 -->
     <color name="colorLine">#ECECEC</color>
@@ -94,7 +96,6 @@
     <color name="text_gray_light">#999999</color>
     <color name="text_gray_dark">#666666</color>
     <color name="text_black">#333333</color>
-
 
 
     <!--surface颜色-->

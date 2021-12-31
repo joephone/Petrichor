@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
-
+import android.os.Process;
 import androidx.annotation.NonNull;
 
 import com.transcendence.core.global.Global;
@@ -67,7 +67,7 @@ public final class CrashHandler implements Thread.UncaughtExceptionHandler {
         }
 
         // 杀死进程（这个事应该是系统干的，但是它会多弹出一个崩溃对话框，所以需要我们自己手动杀死进程）
-        android.os.Process.killProcess(android.os.Process.myPid());
+        Process.killProcess(Process.myPid());
         System.exit(10);
     }
 }

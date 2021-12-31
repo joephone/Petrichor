@@ -58,7 +58,7 @@
 
     </LinearLayout>
 
-    <!-- 第3排  set_gesture -->
+    <!-- 第2排  set_gesture -->
     <LinearLayout
         android:id="@+id/ll_set_gesture"
         android:layout_width="match_parent"
@@ -108,7 +108,7 @@
     </LinearLayout>
 
 
-    <!-- 第4排  verify_gesture -->
+    <!-- 第3排  verify_gesture -->
     <LinearLayout
         android:id="@+id/ll_verify_gesture"
         android:layout_width="match_parent"
@@ -134,6 +134,56 @@
             android:layout_weight="1"
             android:singleLine="true"
             android:text="@string/verify_gesture"
+            android:textColor="@color/text_surface"
+            android:textSize="@dimen/text_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/text_third"
+            android:textSize="@dimen/text_notes"
+            tools:text="@string/simplified_chinese" />
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:rotation="180"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back"
+            android:tint="@color/third" />
+
+    </LinearLayout>
+
+
+    <!-- 第4排  pay -->
+    <LinearLayout
+        android:id="@+id/ll_pay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_standard_layout"
+        android:background="@drawable/water_effect_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_capture"
+            android:tint="@color/main" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="@string/pay"
             android:textColor="@color/text_surface"
             android:textSize="@dimen/text_content" />
 

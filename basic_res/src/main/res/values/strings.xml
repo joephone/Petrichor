@@ -5,8 +5,9 @@
     <string name="navigation_drawer_close">Close drawer</string>
     <!-- system -->
     <string name="request_fail">RequestFail</string>
-    <string name="exit_app">ExitApp</string>
+    <string name="exit_app">Exit App</string>
     <string name="private_policy">PrivatePolicy</string>
+    <string name="public_notice">Public Notice</string>
     <string name="crash_restart">Crashed Restart</string>
     <!-- common -->
     <string name="exit">Exit</string>
@@ -24,6 +25,7 @@
     <string name="edit">Edit</string>
     <string name="tip">Tip</string>
     <string name="skip">Skip</string>
+    <string name="pay">Pay</string>
     <!-- 4 tab -->
     <string name="tab_home">Home</string>
     <string name="tab_hierarchy">Hierarchy</string>
@@ -75,12 +77,16 @@
     <string name="lan_en">English</string>
     <string name="lan_ja">Japanese</string>
     <string name="lan_de">Deutsch</string>
+    <string name="lan_change_confirm">Change Confirm？</string>
     <!-- lucky panel -->
     <string name="lucky_panel_title">Wheel of Fortune</string>
     <string name="lucky_panel_times_left">times left</string>
     <string name="lucky_panel_fortune_list">Check out your fortune list</string>
     <!-- network -->
     <string name="common_network_error">Network Error</string>
+    <string name="status_layout_no_data">空空如也</string>
+    <string name="status_layout_error_request">请求出错，点击重试</string>
+    <string name="status_layout_error_network">网络错误，点击重试</string>
     <!-- update -->
     <string name="update_title">New Version Found</string>
     <string name="update_content">Update 1</string>
@@ -96,5 +102,8 @@
     <!-- update end  -->
     <!-- other -->
     <string name="viewpager_indicator">%1$d/%2$d</string>
+    <string name="privacy_check_android_edition">本应用为高版本Android设备打造\n感谢您的使用！</string>
+    <string name="about">About Me</string>
+    <string name="about_author"><font color="#85b84f">Android</font>Joephone</string>
     <string name="copy_right" translatable="false">Copyrights © 2021</string>
 </resources>

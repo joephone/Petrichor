@@ -16,6 +16,8 @@ import com.transcendence.core.utils.SPUtils;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.fragment.PetrichorBaseFragment;
 import com.transcendence.petrichor.pic.activity.DragImageActivity;
+import com.transcendence.petrichor.ui.main.activity.WebViewActivity;
+import com.transcendence.petrichor.ui.mine.activity.AboutMeActivity;
 import com.transcendence.petrichor.ui.mine.activity.LoginActivity;
 import com.transcendence.petrichor.ui.main.activity.MainActivity;
 import com.transcendence.petrichor.ui.mine.activity.LuckyPanelActivity;
@@ -40,11 +42,7 @@ import java.util.ArrayList;
  */
 public class MineFragment extends PetrichorBaseFragment<MainActivity> implements View.OnClickListener, HeaderZoomLayout.OnScrollListener {
 
-    private LinearLayout ll_setting, ll_top;
     private HeaderZoomLayout mScroll;
-    private FrameLayout fl_mine;
-    private AppCompatImageView mIvAvatar;
-    private TextView mTvSign;
     boolean isFirstGo = SPUtils.getInstance().getBoolean(Global.SP_KEY.APP_FIRST_START, true);
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_SHOW_TEXT = "text";
@@ -52,7 +50,6 @@ public class MineFragment extends PetrichorBaseFragment<MainActivity> implements
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
-     *
      * @param title Parameter 1.
      * @return A new instance of fragment .
      */
@@ -71,16 +68,15 @@ public class MineFragment extends PetrichorBaseFragment<MainActivity> implements
 
     @Override
     protected void initView() {
-        ll_setting = (LinearLayout) findViewById(R.id.ll_setting);
-        ll_setting.setOnClickListener(this);
         mScroll = (HeaderZoomLayout) findViewById(R.id.scrollView);
         mScroll.setOnScrollListener(this);
-        ll_top = (LinearLayout) findViewById(R.id.ll_top);
-        ll_top.setOnClickListener(this);
-        mIvAvatar = (AppCompatImageView) findViewById(R.id.iv_avatar);
-        mIvAvatar.setOnClickListener(this);
-        mTvSign = (TextView) findViewById(R.id.tv_sign_in);
-        mTvSign.setOnClickListener(this);
+
+        findViewById(R.id.ll_open_project).setOnClickListener(this);
+        findViewById(R.id.ll_about_author).setOnClickListener(this);
+        findViewById(R.id.ll_setting).setOnClickListener(this);
+        findViewById(R.id.ll_top).setOnClickListener(this);
+        findViewById(R.id.iv_avatar).setOnClickListener(this);
+        findViewById(R.id.tv_sign_in).setOnClickListener(this);
     }
 
     @Override
@@ -174,11 +170,17 @@ public class MineFragment extends PetrichorBaseFragment<MainActivity> implements
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.ll_open_project:
+                WebViewActivity.start(getContext(), Global.GITHUB_AUTHOR_MAIN_PROJECT,"开源项目");
+                break;
+            case R.id.ll_about_author:
+                AboutMeActivity.start(getActivity());
+                break;
             case R.id.ll_setting:
                 SettingActivity.start(getActivity());
                 break;
             case R.id.ll_top:
-                LoginActivity.start(getActivity());
+//                LoginActivity.start(getActivity());
                 break;
             case R.id.tv_sign_in:
                 LuckyPanelActivity.start(getActivity());

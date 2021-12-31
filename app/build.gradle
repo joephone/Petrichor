@@ -73,6 +73,12 @@ dependencies {
 
     implementation 'io.reactivex.rxjava3:rxjava:3.0.4'
 
+    // 动画解析库：https://github.com/airbnb/lottie-android
+    // 动画资源：https://lottiefiles.com、https://icons8.com/animated-icons
+    implementation 'com.airbnb.android:lottie:3.6.1'
+
+    implementation 'com.youth.banner:banner:1.4.10'
+
 }
 
 /**

@@ -102,7 +102,6 @@ public class AppUpdater {
      * 启动下载服务
      */
     private void startDownloadService(){
-
         Intent intent = new Intent(mContext, DownloadService.class);
         if(mCallback!=null || mHttpManager!=null){//bindService
             mServiceConnection = new ServiceConnection() {
