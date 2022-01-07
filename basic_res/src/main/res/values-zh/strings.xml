@@ -26,6 +26,7 @@
     <string name="tip">提示</string>
     <string name="skip">跳过</string>
     <string name="pay">支付</string>
+    <string name="to_app_setting">跳转到应用详情页</string>
     <!-- tab -->
     <string name="tab_home">首页</string>
     <string name="tab_hierarchy">体系</string>

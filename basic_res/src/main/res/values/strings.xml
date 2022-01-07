@@ -26,6 +26,7 @@
     <string name="tip">Tip</string>
     <string name="skip">Skip</string>
     <string name="pay">Pay</string>
+    <string name="to_app_setting">App Setting</string>
     <!-- 4 tab -->
     <string name="tab_home">Home</string>
     <string name="tab_hierarchy">Hierarchy</string>

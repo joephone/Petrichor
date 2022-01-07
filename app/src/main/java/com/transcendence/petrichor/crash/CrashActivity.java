@@ -1,7 +1,10 @@
 package com.transcendence.petrichor.crash;
 
+import android.Manifest;
 import android.app.Application;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
@@ -19,11 +22,21 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.gyf.immersionbar.ImmersionBar;
 import com.trancesdence.utils.AppUtils;
 import com.transcendence.core.base.BaseActivity;
+import com.transcendence.core.base.action.HandlerAction;
 import com.transcendence.core.global.Global;
+import com.transcendence.core.manager.ThreadPoolManager;
+import com.transcendence.core.permission.PermissionPool;
 import com.transcendence.petrichor.R;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,7 +46,7 @@ import java.util.regex.Pattern;
  *    time   : 2019/06/27
  *    desc   : 崩溃捕捉界面
  */
-public final class CrashActivity extends BaseActivity {
+public final class CrashActivity extends BaseActivity implements HandlerAction {
 
     /** 报错代码行数正则表达式 */
     private static final Pattern CODE_REGEX = Pattern.compile("\\(\\w+\\.\\w+:\\d+\\)");
@@ -142,27 +155,27 @@ public final class CrashActivity extends BaseActivity {
         builder.append("\n应用版本：\t").append(AppUtils.getVersionName(mActivity))
                 .append("\n版本代码：\t").append(AppUtils.getVersionCode(mActivity));
 
-//        try {
-//            SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd HH:mm", Locale.getDefault());
-//            PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_PERMISSIONS);
-//            builder.append("\n首次安装：\t").append(dateFormat.format(new Date(packageInfo.firstInstallTime)))
-//                    .append("\n最近安装：\t").append(dateFormat.format(new Date(packageInfo.lastUpdateTime)))
-//                    .append("\n崩溃时间：\t").append(dateFormat.format(new Date()));
-//
-//            List<String> permissions = Arrays.asList(packageInfo.requestedPermissions);
-//
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd HH:mm", Locale.getDefault());
+            PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_PERMISSIONS);
+            builder.append("\n首次安装：\t").append(dateFormat.format(new Date(packageInfo.firstInstallTime)))
+                    .append("\n最近安装：\t").append(dateFormat.format(new Date(packageInfo.lastUpdateTime)))
+                    .append("\n崩溃时间：\t").append(dateFormat.format(new Date()));
+
+            List<String> permissions = Arrays.asList(packageInfo.requestedPermissions);
+
 //            if (permissions.contains(PermissionPool.MANAGE_EXTERNAL_STORAGE)) {
-//                builder.append("\n存储权限：\t").append(XXPermissions.isGrantedPermission(this, Permission.MANAGE_EXTERNAL_STORAGE) ? "已获得" : "未获得");
+//                builder.append("\n存储权限：\t").append(XXPermissions.isGrantedPermission(this, PermissionPool.MANAGE_EXTERNAL_STORAGE) ? "已获得" : "未获得");
 //            }
 //
 //            if (permissions.contains(PermissionPool.ACCESS_FINE_LOCATION) || permissions.contains(PermissionPool.ACCESS_COARSE_LOCATION)) {
 //                builder.append("\n定位权限：\t");
-//                if (XXPermissions.isGrantedPermission(this, Permission.Group.LOCATION)) {
+//                if (XXPermissions.isGrantedPermission(this, PermissionPool.GROUP.LOCATION)) {
 //                    builder.append("精确、粗略");
 //                } else {
-//                    if (XXPermissions.isGrantedPermission(this, Permission.ACCESS_FINE_LOCATION)) {
+//                    if (XXPermissions.isGrantedPermission(this, PermissionPool.ACCESS_FINE_LOCATION)) {
 //                        builder.append("精确");
-//                    } else if (XXPermissions.isGrantedPermission(this, Permission.ACCESS_COARSE_LOCATION)) {
+//                    } else if (XXPermissions.isGrantedPermission(this, PermissionPool.ACCESS_COARSE_LOCATION)) {
 //                        builder.append("粗略");
 //                    } else {
 //                        builder.append("未获得");
@@ -170,40 +183,40 @@ public final class CrashActivity extends BaseActivity {
 //                }
 //            }
 //
-//            if (permissions.contains(Permission.CAMERA)) {
-//                builder.append("\n相机权限：\t").append(XXPermissions.isGrantedPermission(this, Permission.CAMERA) ? "已获得" : "未获得");
+//            if (permissions.contains(PermissionPool.CAMERA)) {
+//                builder.append("\n相机权限：\t").append(XXPermissions.isGrantedPermission(this, PermissionPool.CAMERA) ? "已获得" : "未获得");
 //            }
 //
-//            if (permissions.contains(Permission.RECORD_AUDIO)) {
-//                builder.append("\n录音权限：\t").append(XXPermissions.isGrantedPermission(this, Permission.RECORD_AUDIO) ? "已获得" : "未获得");
+//            if (permissions.contains(PermissionPool.RECORD_AUDIO)) {
+//                builder.append("\n录音权限：\t").append(XXPermissions.isGrantedPermission(this, PermissionPool.RECORD_AUDIO) ? "已获得" : "未获得");
 //            }
 //
-//            if (permissions.contains(Permission.SYSTEM_ALERT_WINDOW)) {
-//                builder.append("\n悬浮窗权限：\t").append(XXPermissions.isGrantedPermission(this, Permission.SYSTEM_ALERT_WINDOW) ? "已获得" : "未获得");
+//            if (permissions.contains(PermissionPool.SYSTEM_ALERT_WINDOW)) {
+//                builder.append("\n悬浮窗权限：\t").append(XXPermissions.isGrantedPermission(this, PermissionPool.SYSTEM_ALERT_WINDOW) ? "已获得" : "未获得");
 //            }
 //
-//            if (permissions.contains(Permission.REQUEST_INSTALL_PACKAGES)) {
-//                builder.append("\n安装包权限：\t").append(XXPermissions.isGrantedPermission(this, Permission.REQUEST_INSTALL_PACKAGES) ? "已获得" : "未获得");
+//            if (permissions.contains(PermissionPool.REQUEST_INSTALL_PACKAGES)) {
+//                builder.append("\n安装包权限：\t").append(XXPermissions.isGrantedPermission(this, PermissionPool.REQUEST_INSTALL_PACKAGES) ? "已获得" : "未获得");
 //            }
-//
-//            if (permissions.contains(Manifest.permission.INTERNET)) {
-//                builder.append("\n当前网络访问：\t");
-//
-//                ThreadPoolManager.getInstance().execute(() -> {
-//                    try {
-//                        InetAddress.getByName("www.baidu.com");
-//                        builder.append("正常");
-//                    } catch (UnknownHostException ignored) {
-//                        builder.append("异常");
-//                    }
-//                    post(() -> mInfoView.setText(builder));
-//                });
-//
-//            } else {
-//                mInfoView.setText(builder);
-//            }
-//
-//        } catch (PackageManager.NameNotFoundException ignored) {}
+
+            if (permissions.contains(Manifest.permission.INTERNET)) {
+                builder.append("\n当前网络访问：\t");
+
+                ThreadPoolManager.getInstance().execute(() -> {
+                    try {
+                        InetAddress.getByName("www.baidu.com");
+                        builder.append("正常");
+                    } catch (UnknownHostException ignored) {
+                        builder.append("异常");
+                    }
+                    post(() -> mInfoView.setText(builder));
+                });
+
+            } else {
+                mInfoView.setText(builder);
+            }
+
+        } catch (PackageManager.NameNotFoundException ignored) {}
     }
 
 //    @SingleClick

@@ -58,7 +58,6 @@
             </intent-filter>
         </activity>
 
-
         <activity
             android:name=".ui.loc.activity.WeixinLocActivity"
             android:screenOrientation="portrait"
@@ -138,7 +137,7 @@
             android:name=".crash.CrashActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTask"/>
-
+        <!-- 重启 -->
         <activity
             android:name=".crash.RestartActivity"
             android:screenOrientation="portrait"

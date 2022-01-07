@@ -1,7 +1,9 @@
 package com.transcendence.petrichor.ui.setting.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -37,13 +39,13 @@ public class MultiSettingActivity extends PetrichorBaseActivity {
         findViewById(R.id.ll_set_gesture).setOnClickListener(this);
         findViewById(R.id.ll_verify_gesture).setOnClickListener(this);
         findViewById(R.id.ll_pay).setOnClickListener(this);
+        findViewById(R.id.ll_app_setting).setOnClickListener(this);
     }
 
     @Override
     protected void initData() {
 
     }
-
 
     @Override
     public void onClick(View v) {
@@ -66,6 +68,9 @@ public class MultiSettingActivity extends PetrichorBaseActivity {
             case R.id.ll_pay:
                 PaySubmitActivity.start(getActivity());
                 break;
+            case R.id.ll_app_setting:
+                appSetting(this);
+                break;
         }
     }
 
@@ -73,4 +78,15 @@ public class MultiSettingActivity extends PetrichorBaseActivity {
         Intent intent = new Intent(context, MultiSettingActivity.class);
         context.startActivity(intent);
     }
+
+    /**
+     * 跳转到应用详情界面
+     */
+    public static void appSetting(Activity activity) {
+        Intent intent = new Intent();
+        intent.setAction(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        intent.setData(Uri.parse("package:" + activity.getPackageName()));
+        activity.startActivity(intent);
+    }
+
 }

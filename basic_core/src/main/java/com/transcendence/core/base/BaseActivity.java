@@ -90,17 +90,19 @@ public abstract class BaseActivity extends AppCompatActivity implements Keyboard
         setIntent(intent);
     }
 
-    @Override
-    public Bundle getBundle() {
-        return getIntent().getExtras();
-    }
-
     /**
      * 和 setContentView 对应的方法
      */
     public ViewGroup getContentView() {
         return findViewById(Window.ID_ANDROID_CONTENT);
     }
+
+    @Override
+    public Bundle getBundle() {
+        return getIntent().getExtras();
+    }
+
+
 
     @Override
     public Context getContext() {

@@ -30,8 +30,10 @@ import com.transcendence.ui.newguide.model.GuidePage;
 import com.transcendence.ui.newguide.model.HighLight;
 import com.transcendence.ui.newguide.model.RelativeGuide;
 import com.transcendence.ui.scroll.HeaderZoomLayout;
+import com.transcendence.ui.utils.L;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author Joephone on 2021/12/3 0003 下午 4:01
@@ -191,10 +193,11 @@ public class MineFragment extends PetrichorBaseFragment<MainActivity> implements
         }
     }
 
+    private List list;
     @Override
     public void onScroll(int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
         if (Math.abs(scrollY - oldScrollY) > 50) {
-
+            L.d(""+list.size());
         }
     }
 

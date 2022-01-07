@@ -27,11 +27,8 @@ import java.util.ArrayList;
 public class PaySubmitActivity extends PetrichorBaseActivity implements SmoothCheckBox.OnSmoothCheckedChangeListener, TimeCountDownView.OnTimeCompleteListener
         , View.OnClickListener {
 
-//    @BindView(R2.id.ll_submit_zhifubao)
     LinearLayout mLlSubmitZhifubao;
-//    @BindView(R2.id.ll_submit_showzhifubao)
     LinearLayout mLlSubmitShowzhifubao;
-
     SmoothCheckBox mCbMeituanPay;
     SmoothCheckBox mCbWeixinPay;
     SmoothCheckBox mCbQqPay;
