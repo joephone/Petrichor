@@ -1,6 +1,7 @@
 package com.transcendence.petrichor.base.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.hjq.language.MultiLanguages;
 import com.tbruyelle.rxpermissions3.RxPermissions;
 import com.transcendence.core.base.BaseActivity;
 import com.transcendence.core.global.Global;
@@ -48,7 +50,14 @@ public abstract class PetrichorBaseActivity extends BaseActivity
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EventBus.getDefault().register(this);
-        changeAppLanguage();
+//        changeAppLanguage();
+    }
+
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        // 绑定语种 轮子哥
+        super.attachBaseContext(MultiLanguages.attach(newBase));
     }
 
 

@@ -1,9 +1,13 @@
 package com.transcendence.petrichor.base.fragment;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
+import com.hjq.language.MultiLanguages;
 import com.transcendence.core.base.fragment.BaseFragment;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.action.ToastAction;
@@ -48,5 +52,12 @@ public abstract class PetrichorBaseFragment<A extends PetrichorBaseActivity> ext
     private void clickBack(View view) {
         finish();
     }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        // 获得全局的 Activity 轮子哥
+        super.onAttach(MultiLanguages.attach(context));
+    }
+
 
 }

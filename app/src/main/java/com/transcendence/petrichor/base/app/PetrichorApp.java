@@ -2,22 +2,29 @@ package com.transcendence.petrichor.base.app;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 
+import com.hjq.language.MultiLanguages;
+import com.hjq.language.OnLanguageListener;
 import com.hjq.toast.ToastInterceptor;
 import com.hjq.toast.ToastUtils;
 import com.hjq.toast.style.ToastBlackStyle;
 import com.transcendence.core.base.app.LibApplication;
+import com.transcendence.core.utils.L;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.manager.ActivityManager;
 import com.transcendence.petrichor.crash.CrashHandler;
+
+import java.util.Locale;
 
 /**
  * @Author Joephone on 2021/12/1 0001 下午 4:26
@@ -70,5 +77,27 @@ public final class PetrichorApp extends LibApplication {
         }
 
         CrashHandler.register(application);
+
+        // 初始化多语种框架 轮子哥
+        MultiLanguages.init(application);
+        // 设置语种变化监听器 轮子哥
+        MultiLanguages.setOnLanguageListener(new OnLanguageListener() {
+
+            @Override
+            public void onAppLocaleChange(Locale oldLocale, Locale newLocale) {
+                L.d( "监听到应用切换了语种，旧语种：" + oldLocale + "，新语种：" + newLocale);
+            }
+
+            @Override
+            public void onSystemLocaleChange(Locale oldLocale, Locale newLocale) {
+                L.d("监听到系统切换了语种，旧语种：" + oldLocale + "，新语种：" + newLocale + "，是否跟随系统：" + MultiLanguages.isSystemLanguage());
+            }
+        });
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        // 绑定语种  轮子哥
+        super.attachBaseContext(MultiLanguages.attach(newBase));
     }
 }

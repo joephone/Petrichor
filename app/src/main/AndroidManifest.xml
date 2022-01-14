@@ -48,8 +48,7 @@
         <!--  android:theme="@style/splash"   android:name=".crash.CauseActivity" -->
         <activity
             android:name=".ui.main.activity.SplashActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask" >
+            android:screenOrientation="portrait" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,33 +59,28 @@
 
         <activity
             android:name=".ui.loc.activity.WeixinLocActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.main.activity.MainActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.main.activity.WebViewActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.mine.activity.LoginActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.mine.activity.RegisterActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.mine.activity.LuckyPanelActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.mine.activity.DuangActivity"
@@ -95,53 +89,48 @@
 
         <activity
             android:name=".ui.mine.activity.AboutMeActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.mine.activity.PaySubmitActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.setting.activity.SettingActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.setting.activity.LanguageActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.setting.activity.MultiSettingActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.setting.activity.TextSizeSetActivity"
+            android:screenOrientation="portrait"/>
+
 
         <activity
             android:name=".ui.setting.gesture.activity.SettingGestureLockActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.setting.gesture.activity.VerifyGestureLockActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".pic.activity.DragImageActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".crash.CrashActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
         <!-- 重启 -->
         <activity
             android:name=".crash.RestartActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:screenOrientation="portrait"/>
 
         <!-- 高德地图  -->
         <meta-data

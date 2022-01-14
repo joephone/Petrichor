@@ -78,7 +78,8 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.6.1'
 
     implementation 'com.youth.banner:banner:1.4.10'
-
+    // 语种切换框架：https://github.com/getActivity/MultiLanguages  不得开启 singleTask 模式
+    implementation 'com.github.getActivity:MultiLanguages:8.0'
 }
 
 /**

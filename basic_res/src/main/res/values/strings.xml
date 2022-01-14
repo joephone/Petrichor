@@ -69,16 +69,22 @@
     <string name="common_code_send_hint">Code Send Hint</string>
     <string name="common_code_error_hint">Code Send Error Hint</string>
     <!-- setting -->
+    <string name="cache_clear">Cache Clear</string>
     <string name="multi_setting">Multi Setting</string>
     <string name="finger_print">Finger Print</string>
     <string name="set_gesture">Set Gesture</string>
     <string name="verify_gesture">Verify Gesture</string>
+    <string name="Settings_TextSize_TxtSizeAdjustNote">Drag the block below to change text size</string>
+    <string name="Settings_TextSize_Slide">Slide Around</string>
+    <string name="Settings_TextSize_Normal">Standard</string>
+    <string name="Settings_General_FontSize">Text Size</string>
     <!-- lan -->
     <string name="lan_chinese">Chinese</string>
     <string name="lan_en">English</string>
     <string name="lan_ja">Japanese</string>
     <string name="lan_de">Deutsch</string>
     <string name="lan_change_confirm">Change Confirm？</string>
+    <string name="lan_system">System Lan</string>
     <!-- lucky panel -->
     <string name="lucky_panel_title">Wheel of Fortune</string>
     <string name="lucky_panel_times_left">times left</string>

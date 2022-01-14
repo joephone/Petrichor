@@ -60,10 +60,45 @@
     </LinearLayout>
 
 
-    <!-- 第2排  setting_check -->
+    <!-- 第2排  文字设置 -->
+    <LinearLayout
+        android:id="@+id/ll_text_size_set"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_standard_layout"
+        android:background="@drawable/water_effect_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="@string/Settings_General_FontSize"
+            android:textColor="@color/text_surface"
+            android:textSize="@dimen/text_content" />
+
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:rotation="180"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back"
+            android:tint="@color/third" />
+
+    </LinearLayout>
+
+
+    <!-- 第3排  setting_check -->
     <LinearLayout
         android:id="@+id/ll_check_update"
         android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
         android:layout_height="@dimen/height_standard_layout"
         android:background="@drawable/water_effect_selector"
         android:gravity="center"
@@ -102,11 +137,10 @@
     </LinearLayout>
 
 
-    <!-- 第3排  清除缓存 -->
+    <!-- 第4排  清除缓存 -->
     <LinearLayout
         android:id="@+id/ll_cache"
         android:layout_width="match_parent"
-        android:layout_marginTop="30dp"
         android:layout_height="@dimen/height_standard_layout"
         android:background="@drawable/water_effect_selector"
         android:gravity="center"
@@ -128,7 +162,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:singleLine="true"
-            android:text="清除缓存"
+            android:text="@string/cache_clear"
             android:textColor="@color/text_surface"
             android:textSize="@dimen/text_content" />
 
@@ -153,11 +187,12 @@
 
     </LinearLayout>
 
-    <!-- 第4排  多功能设置 -->
+    <!-- 第5排  多功能设置 -->
     <LinearLayout
         android:id="@+id/ll_multi"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_standard_layout"
+        android:layout_marginTop="30dp"
         android:background="@drawable/water_effect_selector"
         android:gravity="center"
         android:orientation="horizontal"
@@ -178,7 +213,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:singleLine="true"
-            android:text="多功能设置"
+            android:text="@string/multi_setting"
             android:textColor="@color/text_surface"
             android:textSize="@dimen/text_content" />
 

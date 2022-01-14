@@ -2,12 +2,14 @@ package com.transcendence.petrichor.ui.setting.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.trancesdence.utils.AppUtils;
 import com.transcendence.core.permission.PermissionPool;
+import com.transcendence.core.utils.CacheUtils;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.activity.PetrichorBaseActivity;
 import com.transcendence.petrichor.dialog.UpdateDialog;
@@ -35,6 +37,7 @@ public class SettingActivity extends PetrichorBaseActivity {
         setBackVisibility();
         tvCache = findViewById(R.id.tv_cache);
         findViewById(R.id.ll_language).setOnClickListener(this);
+        findViewById(R.id.ll_text_size_set).setOnClickListener(this);
         findViewById(R.id.ll_check_update).setOnClickListener(this);
         findViewById(R.id.ll_cache).setOnClickListener(this);
         findViewById(R.id.ll_multi).setOnClickListener(this);
@@ -47,7 +50,7 @@ public class SettingActivity extends PetrichorBaseActivity {
 
     @Override
     protected void initData() {
-
+        getCacheSize();
     }
 
     public static void start(Context context) {
@@ -59,7 +62,10 @@ public class SettingActivity extends PetrichorBaseActivity {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.ll_language:
-                LanguageActivity.start(getContext());
+                start(LanguageActivity.class);
+                break;
+            case R.id.ll_text_size_set:
+                start(TextSizeSetActivity.class);
                 break;
             case R.id.ll_check_update:
                 rxPermissions
@@ -87,7 +93,8 @@ public class SettingActivity extends PetrichorBaseActivity {
 
                 break;
             case R.id.ll_cache:
-//                presenter.clearCache();
+                CacheUtils.clearAllCache();
+                getCacheSize();
                 break;
             case R.id.ll_multi:
                 MultiSettingActivity.start(getContext());
@@ -96,5 +103,10 @@ public class SettingActivity extends PetrichorBaseActivity {
 
                 break;
         }
+    }
+
+    public void getCacheSize() {
+        String size = CacheUtils.getTotalCacheSize();
+        tvCache.setText(TextUtils.isEmpty(size)?"":size);
     }
 }

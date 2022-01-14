@@ -30,7 +30,7 @@ import com.transcendence.core.utils.StatusBarUtils;
 public abstract class BaseActivity extends AppCompatActivity implements KeyboardAction
     , ActivityAction, BundleAction,ClickAction {
 
-    protected BaseActivity mActivity;
+    protected static BaseActivity mActivity;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,10 +74,10 @@ public abstract class BaseActivity extends AppCompatActivity implements Keyboard
     protected abstract void initData();
 
 
-    protected void start(Class<?> target) {
+    protected static void start(Class<?> target) {
         Intent intent = new Intent(mActivity, target);
-        startActivity(intent);
-        overridePendingTransition(R.anim.wan_zoom_small_in, R.anim.wan_zoom_small_out);
+        mActivity.startActivity(intent);
+        mActivity.overridePendingTransition(R.anim.wan_zoom_small_in, R.anim.wan_zoom_small_out);
     }
 
     /**
