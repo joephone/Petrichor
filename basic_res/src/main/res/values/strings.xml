@@ -18,6 +18,7 @@
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="save">Save</string>
+    <string name="delete">Delete</string>
     <string name="nickname">NickName</string>
     <string name="address">Address</string>
     <string name="next">Next</string>
@@ -38,9 +39,9 @@
     <string name="my_share">MyShare</string>
     <string name="my_collection">MyCollection</string>
     <string name="read_later">ReadLater</string>
-    <string name="my_open_source">OpenSource</string>
+    <string name="my_open_source">Open Source</string>
     <string name="about_me">AboutMe</string>
-    <string name="system_setting">SystemSetting</string>
+    <string name="system_setting">System Setting</string>
     <string name="sign">Sign</string>
     <!--  title -->
     <string name="home">Home</string>
@@ -48,8 +49,8 @@
     <string name="map">Map</string>
     <string name="setting">Setting</string>
     <string name="setting_language">Language</string>
-    <string name="setting_check_update">ChechUpdate</string>
-    <string name="simplified_chinese">SimplifiedChinese</string>
+    <string name="setting_check_update">Check Update</string>
+    <string name="simplified_chinese">Simplified Chinese</string>
     <string name="america_english">America English</string>
     <!-- login -->
     <string name="login_forget">Forget PW？</string>
@@ -74,6 +75,8 @@
     <string name="finger_print">Finger Print</string>
     <string name="set_gesture">Set Gesture</string>
     <string name="verify_gesture">Verify Gesture</string>
+    <string name="signature">Signature</string>
+    <string name="act_manage">Activity Manage</string>
     <string name="Settings_TextSize_TxtSizeAdjustNote">Drag the block below to change text size</string>
     <string name="Settings_TextSize_Slide">Slide Around</string>
     <string name="Settings_TextSize_Normal">Standard</string>
@@ -107,10 +110,17 @@
     <string name="app_updater_error_notification_content">点击关闭通知</string>
     <string name="app_updater_error_notification_content_re_download">点击重新下载</string>
     <!-- update end  -->
+    <!-- permission -->
+    <string name="permission_read_write_storage">Need Read Write Storage Permission</string>
+    <!-- permission end  -->
     <!-- other -->
+    <string name="target">Your Device Target:</string>
+    <string name="stop_service">Stop Push Service</string>
+    <string name="start_service">Start Push service</string>
     <string name="viewpager_indicator">%1$d/%2$d</string>
     <string name="privacy_check_android_edition">本应用为高版本Android设备打造\n感谢您的使用！</string>
+    <string name="confirm_to_clean_cache">Confirm Clean Cache?</string>
     <string name="about">About Me</string>
     <string name="about_author"><font color="#85b84f">Android</font>Joephone</string>
-    <string name="copy_right" translatable="false">Copyrights © 2021</string>
+    <string name="copy_right" translatable="false">Copyrights © 2022</string>
 </resources>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="signature_clean">清除</string>
+    <string name="signature_hori">横屏输入</string>
+    <string name="signature_top">请在此签名</string>
+    <string name="signature_example">签名示例:</string>
+
+    <string name="mylabel_choice">已选择标签</string>
+    <string name="mylabel_myspeciality">我的专长</string>
+</resources>

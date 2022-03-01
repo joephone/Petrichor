@@ -182,7 +182,7 @@ public class MineFragment extends PetrichorBaseFragment<MainActivity> implements
                 SettingActivity.start(getActivity());
                 break;
             case R.id.ll_top:
-//                LoginActivity.start(getActivity());
+                LoginActivity.start(getActivity());
                 break;
             case R.id.tv_sign_in:
                 LuckyPanelActivity.start(getActivity());

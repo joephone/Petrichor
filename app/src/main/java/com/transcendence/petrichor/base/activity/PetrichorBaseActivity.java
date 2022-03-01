@@ -19,6 +19,7 @@ import com.hjq.language.MultiLanguages;
 import com.tbruyelle.rxpermissions3.RxPermissions;
 import com.transcendence.core.base.BaseActivity;
 import com.transcendence.core.global.Global;
+import com.transcendence.core.softkeyboard.SoftKeyBoardListener;
 import com.transcendence.core.utils.L;
 import com.transcendence.core.utils.SPUtils;
 import com.transcendence.petrichor.R;
@@ -115,6 +116,7 @@ public abstract class PetrichorBaseActivity extends BaseActivity
     protected void setBackVisibility() {
         FrameLayout fl_back = findViewById(R.id.fl_back);
         ImageView iv_left = findViewById(R.id.iv_left);
+        TextView tv_right = findViewById(R.id.tv_right);
         if (isBackVisible) {
             fl_back.setVisibility(View.VISIBLE);
             iv_left.setVisibility(View.VISIBLE);
@@ -124,8 +126,32 @@ public abstract class PetrichorBaseActivity extends BaseActivity
                     clickBack(view);
                 }
             });
+            tv_right.setVisibility(View.VISIBLE);
         } else {
             fl_back.setVisibility(View.INVISIBLE);
         }
+    }
+
+
+    protected void setOnSoftKeyBoardListener() {
+        SoftKeyBoardListener.setListener(this, new SoftKeyBoardListener.OnSoftKeyBoardChangeListener() {
+            @Override
+            public void keyBoardShow(int height) {
+                onKeyBoardShow(height);
+            }
+
+            @Override
+            public void keyBoardHide(int height) {
+                onKeyBoardHide(height);
+            }
+        });
+    }
+
+    protected void onKeyBoardShow(int height) {
+
+    }
+
+    protected void onKeyBoardHide(int height) {
+
     }
 }

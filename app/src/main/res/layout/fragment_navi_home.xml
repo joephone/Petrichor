@@ -9,4 +9,15 @@
 
     <include layout="@layout/title" />
 
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:indicator_height="7dp"
+        app:indicator_margin="5dp"
+        app:indicator_width="7dp" />
+
+
+
+
 </LinearLayout>

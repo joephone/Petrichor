@@ -6,6 +6,7 @@ import android.widget.Toast;
 import androidx.viewpager.widget.ViewPager;
 
 import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
+import com.transcendence.core.base.app.LibApplication;
 import com.transcendence.core.permission.PermissionPool;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.activity.PetrichorBaseActivity;
@@ -13,7 +14,6 @@ import com.transcendence.petrichor.ui.loc.fragment.WeixinLocFragment;
 import com.transcendence.petrichor.ui.main.fragment.MainFragment;
 
 public class MainActivity extends PetrichorBaseActivity {
-
 
 
     private ViewPager mVp;
@@ -36,16 +36,7 @@ public class MainActivity extends PetrichorBaseActivity {
 
     @Override
     protected void initData() {
-        rxPermissions
-                .request(PermissionPool.GROUP.PETRICHOR)
-                .subscribe(granted -> {
-                    if (granted) { // Always true pre-M
-                        // I can control the camera now
 
-                    } else {
-                        // Oups permission denied
-                    }
-                });
     }
 
     private void initVP() {
@@ -92,6 +83,32 @@ public class MainActivity extends PetrichorBaseActivity {
                 break;
         }
         return super.onKeyUp(keyCode, event);
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        enablePermission();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LibApplication.exitApp();
+    }
+
+    private void enablePermission() {
+        rxPermissions
+                .request(PermissionPool.GROUP.PETRICHOR)
+                .subscribe(granted -> {
+                    if (granted) { // Always true pre-M
+                        // I can control the camera now
+                    } else {
+                        // Oups permission denied
+                        toast(R.string.permission_read_write_storage);
+                    }
+                });
     }
 
 }

@@ -18,6 +18,7 @@
     <string name="cancel">取消</string>
     <string name="ok">确定</string>
     <string name="save">保存</string>
+    <string name="delete">删除</string>
     <string name="nickname">昵称</string>
     <string name="address">地区</string>
     <string name="next">下一步</string>
@@ -74,6 +75,8 @@
     <string name="finger_print">指纹解锁</string>
     <string name="set_gesture">设置手势</string>
     <string name="verify_gesture">手势解锁</string>
+    <string name="act_manage">Activity管理</string>
+    <string name="signature">签名</string>
     <string name="Settings_TextSize_TxtSizeAdjustNote">滑动下面的滑块，可设置字体大小</string>
     <string name="Settings_TextSize_Slide">拖动下方滑块</string>
     <string name="Settings_TextSize_Normal">正常</string>
@@ -107,10 +110,17 @@
     <string name="app_updater_error_notification_content">点击关闭通知</string>
     <string name="app_updater_error_notification_content_re_download">点击重新下载</string>
     <!-- update end  -->
+    <!-- permission -->
+    <string name="permission_read_write_storage">请打开读写存储卡权限</string>
+    <!-- permission end  -->
     <!-- other -->
+    <string name="target">Your Device Target:</string>
+    <string name="stop_service">Stop Push Service</string>
+    <string name="start_service">Start Push service</string>
     <string name="viewpager_indicator">%1$d/%2$d</string>
     <string name="privacy_check_android_edition">本应用为高版本Android设备打造\n感谢您的使用！</string>
+    <string name="confirm_to_clean_cache">确定清除缓存？</string>
     <string name="about">关于我</string>
     <string name="about_author"><font color="#85b84f">Android</font>Joephone</string>
-    <string name="copy_right" translatable="false">Copyrights © 2021</string>
+    <string name="copy_right" translatable="false">Copyrights © 2022</string>
 </resources>

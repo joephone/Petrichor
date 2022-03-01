@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_public"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+<!--    <com.aaagame.proframework.widget.AppTitleBar xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@+id/app_title_bar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:clickable="true"-->
+<!--        app:aa_bar_title="Activity管理" />-->
+
+    <include layout="@layout/title" />
+
+    <TextView
+        android:id="@+id/tv_close_activity"
+        style="@style/standardGreenButton"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="@dimen/standard_padding"
+        android:layout_marginRight="@dimen/standard_padding"
+        android:text="关闭指定Activity" />
+
+    <TextView
+        android:id="@+id/tv_exit_app"
+        style="@style/standardGreenButton"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="@dimen/standard_padding"
+        android:layout_marginRight="@dimen/standard_padding"
+        android:text="退出软件" />
+
+
+</LinearLayout>

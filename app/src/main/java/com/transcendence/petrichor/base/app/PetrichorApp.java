@@ -24,6 +24,8 @@ import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.manager.ActivityManager;
 import com.transcendence.petrichor.crash.CrashHandler;
 
+import org.xutils.x;
+
 import java.util.Locale;
 
 /**
@@ -93,6 +95,10 @@ public final class PetrichorApp extends LibApplication {
                 L.d("监听到系统切换了语种，旧语种：" + oldLocale + "，新语种：" + newLocale + "，是否跟随系统：" + MultiLanguages.isSystemLanguage());
             }
         });
+
+        //xutils初始化
+        x.Ext.init(application);
+        x.Ext.setDebug(true); // 是否输出debug日志, 开启debug会影响性能.
     }
 
     @Override

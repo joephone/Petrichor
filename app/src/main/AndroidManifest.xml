@@ -96,6 +96,14 @@
             android:screenOrientation="portrait"/>
 
         <activity
+            android:name=".ui.mine.activity.SignatureActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.mine.activity.HoriSignatureActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
             android:name=".ui.setting.activity.SettingActivity"
             android:screenOrientation="portrait"/>
 
@@ -111,7 +119,6 @@
             android:name=".ui.setting.activity.TextSizeSetActivity"
             android:screenOrientation="portrait"/>
 
-
         <activity
             android:name=".ui.setting.gesture.activity.SettingGestureLockActivity"
             android:screenOrientation="portrait"/>
@@ -123,6 +130,11 @@
         <activity
             android:name=".pic.activity.DragImageActivity"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".pic.activity.ImagePagerActivity"
+            android:screenOrientation="portrait"/>
+
 
         <activity
             android:name=".crash.CrashActivity"

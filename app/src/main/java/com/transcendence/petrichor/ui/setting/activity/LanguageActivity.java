@@ -9,27 +9,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hjq.language.MultiLanguages;
-import com.transcendence.core.base.app.LibApplication;
 import com.transcendence.core.global.Global;
 import com.transcendence.core.utils.SPUtils;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.activity.PetrichorBaseActivity;
 import com.transcendence.petrichor.dialog.BaseDialog;
 import com.transcendence.petrichor.dialog.DialogMessage;
-import com.transcendence.petrichor.dialog.UpdateDialog;
-import com.transcendence.petrichor.ui.main.activity.MainActivity;
-import com.transcendence.petrichor.ui.main.activity.SplashActivity;
 import com.transcendence.petrichor.ui.setting.adapter.LanguageSetAdapter;
 import com.transcendence.petrichor.ui.setting.bean.LanguageBean;
-import com.transcendence.petrichor.ui.setting.eventbus.LanguageEvent;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class LanguageActivity extends PetrichorBaseActivity implements LanguageSetAdapter.LanguageSetAdapterOnClick{
+public class LanguageActivity extends PetrichorBaseActivity implements LanguageSetAdapter.LanguageSetAdapterOnClick {
 
     private RecyclerView mRv;
     private TextView tvLanguage;

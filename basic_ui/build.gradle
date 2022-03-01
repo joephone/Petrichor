@@ -7,6 +7,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':basic_res')
+    implementation project(':basic_utils')
 
     api config.dependencies.appcompatv7
 }

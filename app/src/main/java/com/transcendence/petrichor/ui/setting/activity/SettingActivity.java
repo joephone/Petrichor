@@ -8,10 +8,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.trancesdence.utils.AppUtils;
+import com.transcendence.core.base.app.LibApplication;
 import com.transcendence.core.permission.PermissionPool;
 import com.transcendence.core.utils.CacheUtils;
 import com.transcendence.petrichor.R;
 import com.transcendence.petrichor.base.activity.PetrichorBaseActivity;
+import com.transcendence.petrichor.dialog.BaseDialog;
+import com.transcendence.petrichor.dialog.DialogMessage;
 import com.transcendence.petrichor.dialog.UpdateDialog;
 
 /**
@@ -93,8 +96,25 @@ public class SettingActivity extends PetrichorBaseActivity {
 
                 break;
             case R.id.ll_cache:
-                CacheUtils.clearAllCache();
-                getCacheSize();
+                new DialogMessage.Builder(mActivity)
+                        .setTitle(R.string.tip)
+                        // 内容必须要填写
+                        .setMessage(R.string.confirm_to_clean_cache)
+                        .setConfirm(getString(R.string.ok))
+                        // 设置 null 表示不显示取消按钮
+                        .setCancel(getString(R.string.cancel))
+                        // 设置点击按钮后不关闭对话框
+                        //.setAutoDismiss(false)
+                        .setListener(new DialogMessage.OnListener() {
+
+                            @Override
+                            public void onConfirm(BaseDialog dialog) {
+                                CacheUtils.clearAllCache();
+                                getCacheSize();
+                            }
+
+                        })
+                        .show();
                 break;
             case R.id.ll_multi:
                 MultiSettingActivity.start(getContext());

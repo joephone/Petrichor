@@ -39,6 +39,7 @@ dependencies {
     api config.dependencies.eventbus
     api config.dependencies.gson
     api config.dependencies.SmartRefreshLayout
+    api config.dependencies.banner
 
 //    //3D地图so及jar latest.integration
 //    implementation 'com.amap.api:3dmap:8.1.0'
@@ -77,9 +78,10 @@ dependencies {
     // 动画资源：https://lottiefiles.com、https://icons8.com/animated-icons
     implementation 'com.airbnb.android:lottie:3.6.1'
 
-    implementation 'com.youth.banner:banner:1.4.10'
     // 语种切换框架：https://github.com/getActivity/MultiLanguages  不得开启 singleTask 模式
     implementation 'com.github.getActivity:MultiLanguages:8.0'
+
+    implementation 'org.xutils:xutils:3.5.0'
 }
 
 /**

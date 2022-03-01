@@ -227,6 +227,38 @@
 
     </LinearLayout>
 
+    <!-- 第6排  App管理 -->
+    <LinearLayout
+        android:id="@+id/ll_act_manager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_standard_layout"
+        android:background="@drawable/water_effect_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="@string/act_manage"
+            android:textColor="@color/text_surface"
+            android:textSize="@dimen/text_content" />
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:rotation="180"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back"
+            android:tint="@color/third" />
+
+    </LinearLayout>
+
 
     <!-- 第8排  退出 -->
     <LinearLayout

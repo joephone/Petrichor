@@ -1,0 +1,18 @@
+apply plugin: 'com.android.library'
+apply from: "../basic.gradle"
+
+def config = rootProject.ext
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //glide相关依赖
+//    implementation rootProject.depsLibs.glide
+//    annotationProcessor rootProject.depsLibs.glidecompiler
+    api config.dependencies.glide
+    api config.dependencies.glidecompiler
+    //占位编译  编译时有效不会参与打包
+    compileOnly config.dependencies.rxjava
+    compileOnly config.dependencies.rxandroid
+
+
+}

@@ -51,5 +51,9 @@ public class LoginActivity extends PetrichorBaseActivity {
 //        RegisterActivity.start(LoginActivity.this);
     }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setOnSoftKeyBoardListener();
+    }
 }

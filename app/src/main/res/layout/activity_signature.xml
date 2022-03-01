@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            >
+
+            <TextView
+                android:layout_marginLeft="@dimen/standard_padding"
+                android:gravity="center_vertical"
+                android:layout_centerVertical="true"
+                android:id="@+id/signature_qianming"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/signature_top"
+                android:textColor="@color/text_33"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_toRightOf="@id/signature_qianming"
+                android:id="@+id/tvHori"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:paddingLeft="5dp"
+                android:gravity="center_vertical"
+                android:autoLink="all"
+                android:text="@string/signature_hori"
+                android:textColor="@color/theme_tudor_red"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/tvClean"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:paddingRight="@dimen/standard_padding"
+                android:paddingLeft="@dimen/standard_padding"
+                android:gravity="right|center_vertical"
+                android:layout_centerVertical="true"
+                android:text="@string/signature_clean"
+                android:textColor="@color/text_33"
+                android:textSize="@dimen/standard_text" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginLeft="@dimen/standard_padding"
+            android:layout_marginRight="@dimen/standard_padding"
+            android:background="@mipmap/icon_signature">
+
+            <com.transcendence.ui.widget.signature.PaintView
+                android:background="@color/white"
+                android:id="@+id/paint_view"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="2dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/standard_padding"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/signature_example"
+                android:textColor="@color/text_33"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/standard_padding"
+                android:src="@mipmap/icon_signature_shili" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/standard_padding"
+            android:layout_marginRight="@dimen/standard_padding"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/doctorsignature_doctor_tip1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.字迹应当清楚，不可出现涂改痕迹"
+                android:textColor="@color/text_99"
+                android:textSize="@dimen/small_text" />
+
+            <TextView
+                android:id="@+id/doctorsignature_doctor_tip2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.签名请签署规范的中文姓名全名，不可签缩写、姓或代号"
+                android:textColor="@color/text_99"
+                android:textSize="@dimen/small_text" />
+
+            <TextView
+                android:id="@+id/doctorsignature_doctor_tip3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.本次签名一经确认不可随意修改"
+                android:textColor="@color/text_99"
+                android:textSize="@dimen/small_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.请在签名框内签名，不能超出签名框"
+                android:textColor="@color/text_99"
+                android:textSize="@dimen/small_text"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvSend"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        style="@style/standardGreenButton"
+        android:text="发送" />
+
+
+</LinearLayout>

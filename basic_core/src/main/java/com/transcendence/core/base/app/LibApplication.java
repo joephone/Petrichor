@@ -138,4 +138,16 @@ public class LibApplication extends Application {
     public static void killProcess() {
         Process.killProcess(Process.myPid());
     }
+
+    /**
+     * 结束指定的Activity
+     */
+    public static void killActivity(Activity activity) {
+        if (activity != null) {
+            boolean res = activities.remove(activity);
+            System.out.println("删除结果=============" + res);
+            activity.finish();
+            activity = null;
+        }
+    }
 }
